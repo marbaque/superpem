@@ -1,0 +1,163 @@
+.sticky {
+    display: block;
+}
+
+.hentry {
+    margin: 0 0 2em;
+    padding-bottom: 2em;
+    border-bottom: 3px solid $color__background-hr;
+
+}
+
+.entry-header{
+    font-family: $font__sans;
+}
+
+
+.cat-links{
+    @include font-size(.7);
+    font-weight: 700;
+    a{
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color__interactive;
+        padding: 1px;
+
+        &:focus,
+            &:hover{
+            background-color: $color__interactive;
+            color:#fff;
+        }
+    }
+}
+
+.entry-title{
+    margin: .125em 0 .25em;
+    @include font-size(1.4);
+
+    @media screen and (min-width: $query__medium){
+        @include font-size(1.8);
+    }
+
+    a{
+        text-decoration: none;
+        color: $color__navy;
+
+        &:focus,
+            &:hover{
+            border-bottom: 4px solid $color__interactive;
+            color: $color__interactive;
+        }
+    }
+}
+
+.entry-meta{
+    @include font-size(.7);
+    color: #AAAAAA;
+
+    a{
+        font-weight: 700;
+        text-decoration: none;
+        color: $color__navy;
+        &:focus,
+            &:hover{
+            border-bottom: 3px solid $color__interactive;
+            color: $color__interactive;
+        }
+
+    }
+}
+.comments-link,
+.edit-link{
+    &::before {
+        content: "|";
+        margin: 0 0.5em;
+    }
+}
+.byline{
+    width: auto;
+    padding-bottom: 1em;
+    border-bottom: 3px solid $color__skin;
+    clear: right;
+}
+.autor{
+    margin-bottom: 1em;
+}
+.byline,
+.updated:not(.published){
+    display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+    display: inline-block;
+}
+
+.extra{
+    display: none;
+}
+
+/* Custom Post Meta rules for single post / no sidebar. */
+
+.no-sidebar {
+
+    .entry-meta {
+        margin-top: 1.5em;
+    }
+
+    @media screen and (min-width: $query__medium) {
+        .post-content__wrap {
+
+            .entry-meta {
+                margin-top: 2.25em;
+                font-size: 80%;
+
+                a {
+                    font-size: 110%;
+                    display: block;
+                    border-bottom: 3px solid white;
+
+                    &:hover,
+                        &:focus {
+                        border-bottom-color: $color__interactive;
+                    }
+                }
+            }
+
+            .byline,
+            .posted-on,
+            .comments-link,
+            .edit-link {
+                display: block;
+                margin-bottom: 1em;
+
+                &:before,
+                    &:after {
+                    margin: 0;
+                    content: "";
+                }
+            }
+
+            .extra {
+                display: inline;
+            }
+        }
+
+    }	
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
+}
+
+.entry-footer {
+    margin: 1.5em 0;
+    font-family: $font__sans;
+}

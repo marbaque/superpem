@@ -1,0 +1,115 @@
+.header-image,
+.header-image-interna{
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    clear: both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: top;
+    .site-branding {
+        max-width: 80%;
+        text-align: center;
+        .custom-logo-link{
+            margin-bottom: .5em;
+            height: 35px;
+            width: auto;
+            img{
+                height: 65px;
+                width: auto;
+            }
+        }
+        .site-branding-text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 65px;
+            font-size: .8em;
+            @media screen and (min-width: $query__small){
+                font-size: 1em;
+            }
+        }
+        .site-title {
+            margin: 0;
+            padding: 0;
+            font-size: 1.6em;
+            font-weight: 900;
+            line-height: 1em;
+            color: $color__navy;
+
+            a {
+                color:$color__navy;
+                text-decoration: none;
+
+                &:hover,
+                    &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .site-description {
+            margin: 0;
+            font-size: .9em;
+            font-style: italic;
+            font-weight: 100;
+        }
+    }
+}
+.header-image{
+    height: 90vh;
+    max-height: 60vh;
+    @media screen and (min-width: $query__small){
+        height: 60vw;
+    }
+}
+.header-image-interna{
+    height: 100px;
+    @media screen and (min-width: $query__small){
+        height: 150px;
+    }
+    .site-branding {
+        .custom-logo-link{
+            display: none;
+        }
+    }
+}
+
+
+
+//barra superior que contiene el menu
+.site-header {
+    position: relative;
+    padding: 0;
+    background-color: $color__navy;
+    height: 40px;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: $query__small) {
+        height: auto;
+        padding: 0;
+        overflow: visible;
+    }
+}
+
+@media screen and (min-width: $query__medium){
+    .site-header{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .site-branding{
+        width: 35%;
+        flex: 1 0 auto;
+    }
+    .site-navigation{
+        width: 55%;
+    }
+}
+
+/*
+Header Menu
+*/
+@import "header-menu";
