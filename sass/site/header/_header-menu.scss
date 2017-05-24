@@ -7,178 +7,178 @@
     clear: left;
 
     ul {
+        display: none;
+        list-style: none;
+        margin: 40px 0 0 0; //40 px es el ancho de la barra superior en móviles
+        padding-left: 0;
+        background: $color__navy;
+
+        ul {
             display: none;
-            list-style: none;
-            margin: 40px 0 0 0; //40 px es el ancho de la barra superior en móviles
-            padding-left: 0;
-            background: $color__navy;
+            top: 1.5em;
+            z-index: 99999;
+            margin: 0;
 
             ul {
-                    display: none;
-                    top: 1.5em;
-                    z-index: 99999;
-                    margin: 0;
-
-                    ul {
-                            top: 0;
-                    }
-
-                    li {
-                            padding-left: 1em;
-
-                            &:hover > ul,
-                            &.focus > ul {
-                                    left: 100%;
-                            }
-                    }
-
-                    a {
-                            width: 100%;
-                    }
+                top: 0;
             }
 
-            li:hover > ul,
+            li {
+                padding-left: 1em;
+
+                &:hover > ul,
+                    &.focus > ul {
+                    left: 100%;
+                }
+            }
+
+            a {
+                width: 100%;
+            }
+        }
+
+        li:hover > ul,
             li.focus > ul {
-                    left: auto;
-            }
+            left: auto;
+        }
     }
 
     li {
-            position: relative;
+        position: relative;
     }
 
     a {
-            display: inline-block;
-            width: 100%;
-            padding: .5em 1em;
-            text-decoration: none;
-            color: #fff;
+        display: inline-block;
+        width: 100%;
+        padding: .5em 1em;
+        text-decoration: none;
+        color: #fff;
     }
 
     a:hover,
-    a:focus {
-            text-decoration: underline;
+        a:focus {
+        text-decoration: underline;
     }
 
     .current_page_item > a,
     .current-menu-item > a,
     .current_page_ancestor > a,
     .current-menu-ancestor > a {
-            background-color: $color__interactive;
+        background-color: $color__interactive;
     }
 
     .menu-item-has-children,
     .page-item-has-children {
-            min-width: 218px;
+        min-width: 218px;
     }
     .menu-item-has-children > a,
     .page_item_has_children > a {
-            padding-right: 2em;
+        padding-right: 2em;
     }
 }
 
 //botón + para desplegar submenús
 button.dropdown-toggle {
-	position: absolute;
-	right: 0;
-	border: none;
-	background: inherit;
-	color: white;
-	font-size: .8em;
-	line-height: 2;
-	padding: .4em 1em .4em .5em;
+    position: absolute;
+    right: 0;
+    border: none;
+    background: inherit;
+    color: white;
+    font-size: .8em;
+    line-height: 2;
+    padding: .4em 1em .4em .5em;
 }
 
 //botón de contenidos, visible sólo en móviles
 .menu-toggle {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: block;
-	height: 100%;
-	width: 85%;
-	margin: 0;
-	padding: .6em .8em;
-	font-family: $font__sans;
-	text-align: left;
-	font-size: 80%;
-	text-transform: uppercase;
-	color: $color__navy;
-	border: 0;
-	background-color: $color__skin;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 85%;
+    margin: 0;
+    padding: .6em .8em;
+    font-family: $font__sans;
+    text-align: left;
+    font-size: 80%;
+    text-transform: uppercase;
+    color: $color__navy;
+    border: 0;
+    background-color: $color__skin;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 /* Toggle small menu and sub-menus on */
 .toggled-on ul,
 .sub-menu.toggled-on {
-	display: block;
+    display: block;
 }
 
 @media screen and (min-width: $query__small) {
-	.menu-toggle {
-		display: none;
-	}
+    .menu-toggle {
+        display: none;
+    }
 
-	.main-navigation {
-		margin: 0 auto;
-		.menu-item-has-children > a,
-		.page_item_has_children > a {
-			padding-right: 2em;
-			background: hsla(0, 0%, 100%, .1);
-		}
+    .main-navigation {
+        margin: 0 auto;
+        .menu-item-has-children > a,
+        .page_item_has_children > a {
+            padding-right: 2em;
+            background: hsla(0, 0%, 100%, .1);
+        }
 
-		ul {
-			margin: 0;
-			display: block;
-			display: flex;
-			flex-wrap: wrap;
-			padding: 0;
+        ul {
+            margin: 0;
+            display: block;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
 
-			ul {
-				flex-direction: column;
-				background: hsla(0, 0%, 100%, .1);
-				margin-left: 0;
+            ul {
+                flex-direction: column;
+                background: hsla(0, 0%, 100%, .1);
+                margin-left: 0;
 
-				li {
-					padding-left: 0;
+                li {
+                    padding-left: 0;
 
-					a {
-						width: 218px;
-						background: none;
-					}
-				}
-			}
+                    a {
+                        width: 218px;
+                        background: none;
+                    }
+                }
+            }
 
-			li {
+            li {
 
-				a {
-					padding: .4em 1em;
-				}
-			}
-		}
+                a {
+                    padding: .4em 1em;
+                }
+            }
+        }
 
-	}
+    }
 }
 
 
 @media screen and (min-width: $query__medium) {
-	.main-navigation {
+    .main-navigation {
 
-		ul {
-			justify-content: flex-start;
-			padding-top: 0;
+        ul {
+            justify-content: flex-start;
+            padding-top: 0;
 
-			/* If you want dropdowns to open on hover, uncomment this: */
-			/*
-			li:hover > ul,
-				li:focus > ul {
-				display: block;
-			}
-			*/
-		}
+            /* If you want dropdowns to open on hover, uncomment this: */
+            /*
+            li:hover > ul,
+                    li:focus > ul {
+                    display: block;
+            }
+            */
+        }
 
-	}
+    }
 }
