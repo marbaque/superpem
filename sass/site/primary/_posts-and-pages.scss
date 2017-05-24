@@ -5,7 +5,7 @@
 .hentry {
     margin: 0 0 2em;
     padding-bottom: 2em;
-    border-bottom: 3px solid $color__background-hr;
+    //border-bottom: 3px solid $color__background-hr;
 
 }
 
@@ -163,3 +163,40 @@
 }
 
 //estilos para el front-page
+
+
+.flex-container{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;  
+
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    .col{
+        //flex-shrink: 2;
+    }
+    .uno{
+        width: 60%;
+        //padding: 1em;
+    }
+    .dos{
+        width: 40%;
+        
+        @media all and (min-width: $query__medium) {
+            flex: 1 auto;
+        }
+    }
+}
+
+.flex-container > * {
+    padding: 10px;
+    flex: 1 100%;
+}
+
+@media all and (min-width: $query__medium) {
+  .uno    { flex: 3 0px; }
+  .dos { order: 2; }
+}
