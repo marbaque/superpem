@@ -1374,6 +1374,7 @@ button.dropdown-toggle {
 	text-align: center;
 	position: relative;
 	background-color: #eee;
+	border-top: 1px solid #ddd;
 	font-size: 17px;
 	font-size: 1.0625rem;
 }
@@ -1384,10 +1385,11 @@ button.dropdown-toggle {
 
 .site-footer .site-info,
 .site-footer .creditos-menu {
-	padding: 2rem 1rem;
+	padding: 2rem 1rem 6rem 1rem;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
 }
 
-.site-footer ul#creditos-menu {
+.site-footer ul {
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1400,19 +1402,19 @@ button.dropdown-toggle {
 	margin: 0;
 }
 
-.site-footer ul#creditos-menu li {
+.site-footer ul li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.site-footer ul#creditos-menu li a {
+.site-footer ul li a {
 	display: block;
 	padding: 0.5em 1em;
 	text-decoration: none;
 }
 
-.site-footer ul#creditos-menu li a:hover, .site-footer ul#creditos-menu li a:focus {
+.site-footer ul li a:hover, .site-footer ul li a:focus {
 	text-decoration: underline;
 }
 
