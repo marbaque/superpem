@@ -45,7 +45,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import url(colors.css);
 html {
 	font-family: sans-serif;
 	-webkit-text-size-adjust: 100%;
@@ -577,15 +576,15 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #000;
+	color: #20CB9A;
 }
 
 a:visited {
-	color: #000;
+	color: #2B63B6;
 }
 
 a:hover, a:focus, a:active {
-	color: #0074D9;
+	color: #5992E7;
 }
 
 a:focus {
@@ -611,8 +610,8 @@ a:hover, a:active {
 .entry-summary a:hover,
 .comment-content a:focus,
 .comment-content a:hover {
-	color: #0074D9;
-	border-bottom: 2px solid #0074D9;
+	color: #5992E7;
+	border-bottom: 2px solid #5992E7;
 }
 
 /*--------------------------------------------------------------
@@ -648,8 +647,8 @@ a:hover, a:active {
 .paging-navigation a:hover,
 .paging-navigation a:focus {
 	color: white;
-	border-color: #0074D9;
-	background: #0074D9;
+	border-color: #5992E7;
+	background: #5992E7;
 }
 
 .nav-links {
@@ -713,7 +712,7 @@ a:hover, a:active {
 .post-navigation .post-title {
 	font-size: 1.2em;
 	font-weight: 700;
-	border-bottom: 3px solid #0074D9;
+	border-bottom: 3px solid #5992E7;
 }
 
 .post-navigation a:hover .post-title,
@@ -944,12 +943,12 @@ a:hover, a:active {
 	font-size: 1.6em;
 	font-weight: 900;
 	line-height: 1em;
-	color: #001f3f;
+	color: #0E356E;
 }
 
 .header-image .site-branding .site-title a,
 .header-image-interna .site-branding .site-title a {
-	color: #001f3f;
+	color: #0E356E;
 	text-decoration: none;
 }
 
@@ -995,7 +994,7 @@ a:hover, a:active {
 .site-header {
 	position: relative;
 	padding: 0;
-	background-color: #001f3f;
+	background-color: #0E356E;
 	height: 40px;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
@@ -1045,7 +1044,7 @@ Header Menu
 	list-style: none;
 	margin: 40px 0 0 0;
 	padding-left: 0;
-	background: #001f3f;
+	background: #0E356E;
 }
 
 .main-navigation ul ul {
@@ -1098,7 +1097,7 @@ Header Menu
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
-	background-color: #0074D9;
+	background-color: #5992E7;
 }
 
 .main-navigation .menu-item-has-children,
@@ -1135,9 +1134,9 @@ button.dropdown-toggle {
 	text-align: left;
 	font-size: 80%;
 	text-transform: uppercase;
-	color: #001f3f;
+	color: #0E356E;
 	border: 0;
-	background-color: #7FDBFF;
+	background-color: #2B63B6;
 	border-radius: 0;
 }
 
@@ -1197,11 +1196,11 @@ button.dropdown-toggle {
 		padding-top: 0;
 		/* If you want dropdowns to open on hover, uncomment this: */
 		/*
-			li:hover > ul,
-				li:focus > ul {
-				display: block;
-			}
-			*/
+            li:hover > ul,
+                    li:focus > ul {
+                    display: block;
+            }
+            */
 	}
 }
 
@@ -1231,12 +1230,12 @@ button.dropdown-toggle {
 .cat-links a {
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #0074D9;
+	color: #5992E7;
 	padding: 1px;
 }
 
 .cat-links a:focus, .cat-links a:hover {
-	background-color: #0074D9;
+	background-color: #5992E7;
 	color: #fff;
 }
 
@@ -1255,12 +1254,12 @@ button.dropdown-toggle {
 
 .entry-title a {
 	text-decoration: none;
-	color: #001f3f;
+	color: #0E356E;
 }
 
 .entry-title a:focus, .entry-title a:hover {
-	border-bottom: 4px solid #0074D9;
-	color: #0074D9;
+	border-bottom: 4px solid #5992E7;
+	color: #5992E7;
 }
 
 .entry-meta {
@@ -1272,12 +1271,12 @@ button.dropdown-toggle {
 .entry-meta a {
 	font-weight: 700;
 	text-decoration: none;
-	color: #001f3f;
+	color: #0E356E;
 }
 
 .entry-meta a:focus, .entry-meta a:hover {
-	border-bottom: 3px solid #0074D9;
-	color: #0074D9;
+	border-bottom: 3px solid #5992E7;
+	color: #5992E7;
 }
 
 .comments-link::before,
@@ -1289,7 +1288,7 @@ button.dropdown-toggle {
 .byline {
 	width: auto;
 	padding-bottom: 1em;
-	border-bottom: 3px solid #7FDBFF;
+	border-bottom: 3px solid #2B63B6;
 	clear: right;
 }
 
@@ -1327,7 +1326,7 @@ button.dropdown-toggle {
 		border-bottom: 3px solid white;
 	}
 	.no-sidebar .post-content__wrap .entry-meta a:hover, .no-sidebar .post-content__wrap .entry-meta a:focus {
-		border-bottom-color: #0074D9;
+		border-bottom-color: #5992E7;
 	}
 	.no-sidebar .post-content__wrap .byline,
 	.no-sidebar .post-content__wrap .posted-on,
@@ -1582,9 +1581,5 @@ object {
 		margin: 0 -2em;
 	}
 }
-
-/*--------------------------------------------------------------
-# Colors https://github.com/mrmrs/colors
---------------------------------------------------------------*/
 
 /*# sourceMappingURL=../superpem/sass/maps/style.css.map */
