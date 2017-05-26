@@ -28,6 +28,7 @@
         <?php else : ?>
         <header role="banner" class="header-image-interna">   
         <?php endif; // End header image check. ?>
+            
 		<div class="site-branding">
 
 			<?php the_custom_logo(); ?>

@@ -392,7 +392,7 @@ html {
 }
 
 body {
-	background: #fff;
+	background: #F5FBFE;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -998,6 +998,7 @@ a:hover, a:active {
 	height: 40px;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
+	overflow: visible;
 }
 
 @media screen and (min-width: 600px) {
@@ -1008,7 +1009,7 @@ a:hover, a:active {
 	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 600px) {
 	.site-header {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -1036,6 +1037,7 @@ Header Menu
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	font-size: 80%;
+	line-height: 2;
 	clear: left;
 }
 
@@ -1174,10 +1176,13 @@ button.dropdown-toggle {
 		    -ms-flex-direction: column;
 		        flex-direction: column;
 		background: rgba(255, 255, 255, 0.1);
+		padding-top: 0;
 		margin-left: 0;
 	}
 	.main-navigation ul ul li {
 		padding-left: 0;
+		display: block;
+		clear: both;
 	}
 	.main-navigation ul ul li a {
 		width: 218px;
@@ -1186,9 +1191,17 @@ button.dropdown-toggle {
 	.main-navigation ul li a {
 		padding: .4em 1em;
 	}
+	.main-navigation > div > ul > li {
+		margin: 2px;
+	}
+	.main-navigation > div > ul > li > ul {
+		position: absolute;
+		top: 40px;
+		background: #0E356E;
+	}
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 600px) {
 	.main-navigation ul {
 		-webkit-box-pack: start;
 		    -ms-flex-pack: start;
@@ -1561,7 +1574,7 @@ object {
 	display: block;
 	padding: .5em 0;
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
-	color: #AAAAAA;
+	color: #F5FBFE;
 	font-size: 12px;
 	font-size: 0.75rem;
 }

@@ -3,13 +3,13 @@
     font-family: $font__sans;
     font-weight: 400;
     font-size: 80%;
-    //line-height: 2;
+    line-height: 2;
     clear: left;
 
     ul {
         display: none;
         list-style: none;
-        margin: 40px 0 0 0; //40 px es el ancho de la barra superior en móviles
+        margin: 40px 0 0 0; //40 px es el alto de la barra superior en móviles
         padding-left: 0;
         background: $color__navy;
 
@@ -118,7 +118,7 @@ button.dropdown-toggle {
 }
 
 
-//estilos para menu en desktop
+//estilos para menu en destok
 @media screen and (min-width: $query__small) {
     .menu-toggle {
         display: none;
@@ -142,11 +142,13 @@ button.dropdown-toggle {
             ul {
                 flex-direction: column;
                 background: hsla(0, 0%, 100%, .1);
+                padding-top: 0;
                 margin-left: 0;
-                             
-
+                
                 li {
                     padding-left: 0;
+                    display: block;
+                    clear: both;
 
                     a {
                         width: 218px;
@@ -156,18 +158,27 @@ button.dropdown-toggle {
             }
 
             li {
-
                 a {
                     padding: .4em 1em;
                 }
             }
         }
 
+    }  
+    .main-navigation>div>ul>li{
+        margin: 2px; //solo los items padres del menu
+    }
+    .main-navigation>div>ul>li>ul{
+        //solo el primer submenu
+        position: absolute;
+        top: 40px;
+        background: $color__navy;
     }
 }
 
 
-@media screen and (min-width: $query__medium) {
+
+@media screen and (min-width: $query__small) {
     .main-navigation {
 
         ul {

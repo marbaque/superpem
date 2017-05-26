@@ -86,6 +86,7 @@
     background-color: $color__navy;
     height: 40px;
     flex-wrap: wrap;
+    overflow: visible;
 
     @media screen and (min-width: $query__small) {
         height: auto;
@@ -94,7 +95,7 @@
     }
 }
 
-@media screen and (min-width: $query__medium){
+@media screen and (min-width: $query__small){
     .site-header{
         display: flex;
         justify-content: flex-start;
