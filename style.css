@@ -285,7 +285,7 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
 	margin-top: .75em;
 	margin-bottom: .25em;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	clear: both;
 }
 
@@ -622,7 +622,7 @@ a:hover, a:active {
 .post-navigation,
 .paging-navigation {
 	padding: 2em 0;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	text-align: left;
 	overflow: hidden;
 }
@@ -1034,7 +1034,7 @@ Header Menu
 */
 .main-navigation {
 	display: block;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-weight: 400;
 	font-size: 80%;
 	line-height: 2;
@@ -1132,7 +1132,7 @@ button.dropdown-toggle {
 	width: 85%;
 	margin: 0;
 	padding: .6em .8em;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	text-align: left;
 	font-size: 80%;
 	text-transform: uppercase;
@@ -1231,7 +1231,7 @@ button.dropdown-toggle {
 }
 
 .entry-header {
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 .cat-links {
@@ -1376,7 +1376,7 @@ button.dropdown-toggle {
 
 .entry-footer {
 	margin: 1.5em 0;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -1439,6 +1439,81 @@ button.dropdown-toggle {
 	display: block;
 }
 
+.comments-area {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 80%;
+	background: #D8E4EA;
+	padding: 1em;
+	border-radius: 10px;
+}
+
+.comments-area h2 {
+	color: #2B63B6;
+	font-size: 100%;
+	margin-bottom: 1em;
+}
+
+.comments-area a {
+	color: #5992E7;
+}
+
+.comments-area ol {
+	list-style: none;
+	padding: 0;
+}
+
+.comments-area ol li {
+	margin: 1em 0;
+	background: #F5FBFE;
+	padding: 1em;
+	border-radius: 10px;
+}
+
+.comments-area ol.children {
+	margin-left: .1em;
+}
+
+.comments-area ol.children li.parent {
+	padding: 0.5em 0.2em 0 1em;
+}
+
+.comments-area .comment-meta .comment-author {
+	display: -ms-flexbox;
+	display: -webkit-box;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.comments-area .comment-meta .comment-author img {
+	border-radius: 50%;
+	margin-right: .25em;
+}
+
+.comments-area .comment-meta .comment-author .fn {
+	margin-right: .25em;
+}
+
+.comments-area .comment-meta .comment-metadata {
+	font-size: 80%;
+	display: block;
+}
+
+.comments-area a.comment-reply-link {
+	font-size: 12px;
+	background: #2B63B6;
+	padding: .25em .5em;
+	color: #F5FBFE;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.comments-area a.comment-reply-link:hover {
+	background: #5992E7;
+}
+
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -1491,7 +1566,7 @@ object {
 .wp-caption {
 	margin-bottom: 2em;
 	max-width: 100%;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 80%;
 	color: #666666;
 	text-align: center;
@@ -1573,7 +1648,7 @@ object {
 .gallery-caption {
 	display: block;
 	padding: .5em 0;
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Helvetica, Arial, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	color: #F5FBFE;
 	font-size: 12px;
 	font-size: 0.75rem;
