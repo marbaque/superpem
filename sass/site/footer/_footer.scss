@@ -1,9 +1,10 @@
 .site-footer{
+    font-family: $font__sans;
+    @include font-size(0.85);
     text-align: center;
     position: relative;
     background-color: #eee;
-
-    @include font-size(0.85);
+    
     a{
         text-decoration: none;
     }

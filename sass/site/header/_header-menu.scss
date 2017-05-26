@@ -85,7 +85,7 @@ button.dropdown-toggle {
     background: inherit;
     color: white;
     font-size: .8em;
-    line-height: 2;
+    line-height: 2.5;
     padding: .4em 1em .4em .5em;
 }
 
@@ -126,9 +126,14 @@ button.dropdown-toggle {
 
     .main-navigation {
         margin: 0 auto;
+        
         .menu-item-has-children > a,
         .page_item_has_children > a {
             padding-right: 2em;
+            background: hsla(0, 0%, 100%, .2);
+        }
+
+        a{
             background: hsla(0, 0%, 100%, .1);
         }
 
@@ -144,7 +149,8 @@ button.dropdown-toggle {
                 background: hsla(0, 0%, 100%, .1);
                 padding-top: 0;
                 margin-left: 0;
-                
+                background: $color__skin;
+
                 li {
                     padding-left: 0;
                     display: block;
@@ -171,8 +177,10 @@ button.dropdown-toggle {
     .main-navigation>div>ul>li>ul{
         //solo el primer submenu
         position: absolute;
-        top: 40px;
-        background: $color__navy;
+        top: 45px;
+        box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        
+        
     }
 }
 

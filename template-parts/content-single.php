@@ -23,9 +23,19 @@
             <div class="entry-meta">
                 <?php superpem_posted_on(); ?>
             </div><!-- .entry-meta -->
-            <?php endif;
+        <?php endif;
         ?>
     </header><!-- .entry-header -->
+    
+    <?php 
+    if ( has_post_thumbnail() ) { ?>
+    
+    <figure class="imagen-destacada full-bleed">
+        <?php
+        the_post_thumbnail();
+        ?>
+    </figure>
+    <?php } ?>
 
     <section class="post-content">
 
@@ -35,7 +45,7 @@
                     <?php superpem_posted_on(); ?>
                 </div><!-- .entry-meta -->
                 <div class="post-content__body">
-                    <?php endif;
+                <?php endif;
                 ?>
 
                 <div class="entry-content">
@@ -53,13 +63,13 @@
                 </div><!-- .entry-content -->
 
                 <footer class="entry-footer">
-                <?php superpem_entry_footer(); ?>
+                    <?php superpem_entry_footer(); ?>
                 </footer><!-- .entry-footer -->
 
                 <?php if (!is_active_sidebar('sidebar-1')) : ?>
                 </div><!-- .post-content__body -->
             </div><!-- .post-content__wrap -->
-                <?php endif; ?>
+        <?php endif; ?>
 
         <?php
         superpem_post_navigation();
@@ -71,7 +81,7 @@
         ?>
     </section><!-- .post-content -->
 
-        <?php
-        get_sidebar();
-        ?>
+    <?php
+    get_sidebar();
+    ?>
 </article><!-- #post-## -->

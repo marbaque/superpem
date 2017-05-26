@@ -97,7 +97,7 @@
 		}
 
 		siteNavigation.find( 'a' ).on( 'focus.superpem blur.superpem', function() {
-			$( this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
+			$( !this ).parents( '.menu-item, .page_item' ).toggleClass( 'focus' );
 		});
 	})();
 })( jQuery );
