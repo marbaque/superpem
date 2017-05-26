@@ -32,7 +32,7 @@
     
     <figure class="imagen-destacada full-bleed">
         <?php
-        the_post_thumbnail();
+        the_post_thumbnail( 'superpem-full' );
         ?>
     </figure>
     <?php } ?>

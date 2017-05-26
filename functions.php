@@ -41,6 +41,8 @@ function superpem_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+        add_image_size( 'superpem-full', 2000, 1200, true );
+        
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -128,6 +130,7 @@ function superpem_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+        
 }
 add_action( 'widgets_init', 'superpem_widgets_init' );
 
