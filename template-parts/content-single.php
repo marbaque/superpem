@@ -9,6 +9,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    
+     <?php 
+    if ( has_post_thumbnail() ) { ?>
+    
+    <figure class="imagen-destacada full-bleed">
+        <?php
+        the_post_thumbnail( 'superpem-full-bleed' );
+        ?>
+    </figure>
+    <?php } ?>
+    
     <header class="entry-header">
         <?php superpem_the_category_list(); ?>
         <?php
@@ -27,15 +38,7 @@
         ?>
     </header><!-- .entry-header -->
     
-    <?php 
-    if ( has_post_thumbnail() ) { ?>
-    
-    <figure class="imagen-destacada full-bleed">
-        <?php
-        the_post_thumbnail();
-        ?>
-    </figure>
-    <?php } ?>
+   
 
     <section class="post-content">
 

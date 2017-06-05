@@ -1370,36 +1370,39 @@ button.dropdown-toggle {
 }
 
 /* Single Post Imágenes destacadas */
-.imagen-destacada {
+.full-bleed {
 	width: 100vw;
-	max-height: 1200px;
-	margin-top: 1em;
+	max-height: 600px;
+	margin-top: -1em;
 	margin-left: -1em;
-	border-top: 1px solid #e6e6e6;
+	margin-bottom: 2em;
 	border-bottom: 1px solid #e6e6e6;
 	overflow: hidden;
+	background: #2B63B6;
 }
 
 @media screen and (min-width: 600px) {
-	.imagen-destacada {
+	.full-bleed {
+		margin-top: -2em;
 		margin-left: -2em;
 	}
 }
 
 @media screen and (min-width: 900px) {
-	.imagen-destacada {
-		width: 100%;
-		max-height: 1200px;
-		margin-left: 0;
-		margin-top: 1.5em;
-		margin-right: 0;
-		border-top: 1px solid #e6e6e6;
-		border-bottom: 1px solid #e6e6e6;
-		overflow: hidden;
+	.full-bleed {
+		margin-top: -2em;
+		margin-right: -2em;
 	}
 }
 
-.imagen-destacada img {
+@media screen and (min-width: 1080px) {
+	.full-bleed {
+		margin-right: calc( ((-100vw + 1080px)/2) - 2em);
+		margin-left: calc( ((-100vw + 1080px)/2) - 2em);
+	}
+}
+
+.full-bleed img {
 	display: block;
 	margin: 0 auto;
 }

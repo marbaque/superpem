@@ -34,6 +34,7 @@ function superpem_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+        add_image_size( 'superpem-full-bleed', 2000, 600, true );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
