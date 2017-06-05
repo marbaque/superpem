@@ -34,7 +34,6 @@ function superpem_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
-        add_image_size( 'superpem-full-bleed', 2000, 600, true );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -42,6 +41,7 @@ function superpem_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
+        add_image_size( 'superpem-full-bleed', 2000, 600, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
