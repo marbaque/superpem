@@ -32,11 +32,14 @@
                 'before' => '<div class="page-links">' . esc_html__('Pages:', 'superpem'),
                 'after' => '</div>',
             ));
+            
+            superpem_multimedia_navigation();
         ?>
+          
     </div><!-- .entry-content -->
     
     <?php
-        get_sidebar( 'page' ); 
+        get_sidebar( 'multimedia' ); 
     ?>
 
 

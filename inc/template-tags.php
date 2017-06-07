@@ -22,7 +22,7 @@ if (!function_exists('superpem_posted_on')) :
         );
 
         $posted_on = sprintf(
-                esc_html_x('%s', 'post date', 'superpem'), $time_string );
+                esc_html_x('%s', 'post date', 'superpem'), $time_string);
 
         $byline = sprintf(
                 esc_html_x('Written by %s', 'post author', 'superpem'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>'
@@ -128,28 +128,48 @@ add_action('save_post', 'superpem_category_transient_flusher');
  * Post navigation (previous / next post) for single posts.
  */
 function superpem_post_navigation() {
-	the_post_navigation( array(
-		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'superpem' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Next post:', 'superpem' ) . '</span> ' .
-			'<span class="post-title">%title</span>',
-		'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'superpem' ) . '</span> ' .
-			'<span class="screen-reader-text">' . __( 'Previous post:', 'superpem' ) . '</span> ' .
-			'<span class="post-title">%title</span>',
-	) );
+    the_post_navigation(array(
+        'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span> ' .
+        '<span class="screen-reader-text">' . __('Next post:', 'superpem') . '</span> ' .
+        '<span class="post-title">%title</span>',
+        'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'superpem') . '</span> ' .
+        '<span class="screen-reader-text">' . __('Previous post:', 'superpem') . '</span> ' .
+        '<span class="post-title">%title</span>',
+    ));
+}
+
+/*
+ * Navegation for página de contenido multimedia
+ */
+
+function superpem_multimedia_navigation() {
+    the_post_navigation(array(
+        'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'superpem') . '</span> ' .
+        '<span class="screen-reader-text">' . __('Previous content:', 'superpem') . '</span> ' .
+        '<span class="post-title">%title</span>',
+        
+        'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span> ' .
+        '<span class="screen-reader-text">' . __('Next content:', 'superpem') . '</span> ' .
+        '<span class="post-title">%title</span>',
+    ));
 }
 
 /*
  * Cambiar una elipse al final del resumen
  */
-function superpem_resumen_mas( $more ){
+
+function superpem_resumen_mas($more) {
     return "…";
 }
-add_filter( 'excerpt_more', 'superpem_resumen_mas' );
+
+add_filter('excerpt_more', 'superpem_resumen_mas');
 
 /*
  * Cambiar el largo del resumen a 100 palabras
  */
-function superpem_resumen_long ( $length ){
+
+function superpem_resumen_long($length) {
     return 60;
 }
-add_filter( 'excerpt_length', 'superpem_resumen_long' );
+
+add_filter('excerpt_length', 'superpem_resumen_long');

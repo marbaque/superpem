@@ -13,6 +13,10 @@
 
 	</div><!-- #content -->
         
+        <div class="topscroll">
+            <?php echo __( 'Back to top', 'superpem' ); ?>
+        </div>
+        
         <?php get_sidebar( 'footer' ); ?>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">

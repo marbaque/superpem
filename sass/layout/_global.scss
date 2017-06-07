@@ -15,7 +15,8 @@
 /* Single posts */
 @media screen and (min-width: $query__medium) {
     .single.has-sidebar,
-    .page { 
+    .page,
+    .multimedia-page { 
 
         .hentry {
             display: flex;
@@ -36,7 +37,8 @@
             }
         }
     }
-    .page {
+    .page,
+    .multimedia-page {
         &.has-page-sidebar {
             .hentry {
                 flex-direction: row-reverse;

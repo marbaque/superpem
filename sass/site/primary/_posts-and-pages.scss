@@ -184,6 +184,7 @@
 .entry-content,
 .entry-summary {
     margin: 1.5em 0 0;
+    min-height: 60vh;
 }
 
 .page-links {
@@ -194,6 +195,8 @@
 .entry-footer {
     margin: 1.5em 0;
     font-family: $font__sans;
+    display: block;
+    width: 100%;
 }
 
 
