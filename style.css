@@ -614,17 +614,6 @@ a:hover, a:active {
 	border-bottom: 2px solid #5992E7;
 }
 
-.topscroll {
-	display: block;
-	background: #F0F7FB;
-	font-family: Helvetica, Arial, sans-serif;
-	text-align: center;
-	font-size: 60%;
-	letter-spacing: 2px;
-	text-transform: uppercase;
-	padding: 1em 0;
-}
-
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
@@ -634,6 +623,7 @@ a:hover, a:active {
 .paging-navigation {
 	padding: 2em 0;
 	font-family: Helvetica, Arial, sans-serif;
+	font-size: 80%;
 	text-align: left;
 	overflow: hidden;
 }
@@ -648,6 +638,8 @@ a:hover, a:active {
 	padding: 1em;
 	border: 1px solid #cccccc;
 	color: black;
+	background: #E4E4E4;
+	color: #333;
 }
 
 .comment-navigation a:hover, .comment-navigation a:focus,
@@ -764,6 +756,17 @@ a:hover, a:active {
 .pagination .current {
 	font-weight: 800;
 	color: #5992E7;
+}
+
+.topscroll {
+	display: block;
+	background: #F0F7FB;
+	font-family: Helvetica, Arial, sans-serif;
+	text-align: center;
+	font-size: 60%;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	padding: 2em 0;
 }
 
 /*--------------------------------------------------------------
@@ -1601,7 +1604,6 @@ button.dropdown-toggle {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0 0;
-	min-height: 60vh;
 }
 
 .page-links {

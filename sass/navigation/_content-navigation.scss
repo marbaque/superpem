@@ -4,6 +4,7 @@
 .paging-navigation {
     padding: 2em 0;
     font-family: $font__sans;
+    font-size: 80%;
     text-align: left;
     overflow: hidden;
 
@@ -14,6 +15,8 @@
         padding: 1em;
         border: 1px solid hsl(0, 0%, 80%);
         color: black;
+        background: #E4E4E4;
+        color: #333;
 
         &:hover,
             &:focus {
@@ -86,7 +89,7 @@
     }
 
     a:hover .post-title,
-        a:focus .post-title{
+    a:focus .post-title{
         border-bottom-color: white;
     }
 
@@ -113,7 +116,7 @@
         text-decoration: none;
 
         &:focus,
-            &:hover {
+        &:hover {
             color: white;
             background: $color__interactive;
         }
@@ -123,4 +126,15 @@
         font-weight: 800;
         color: $color__interactive;
     }
+}
+
+.topscroll{
+    display: block;
+    background: $color__gray;
+    font-family: $font__sans;
+    text-align: center;
+    font-size: 60%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 2em 0;
 }

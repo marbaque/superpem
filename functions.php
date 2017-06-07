@@ -48,8 +48,8 @@ if (!function_exists('superpem_setup')) :
 
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
-            'primary' => esc_html__('Menú principal', 'superpem'),
-            'creditos-menu' => esc_html__('Menú para créditos o similares', 'superpem'),
+            'primary' => esc_html__('Main menu', 'superpem'),
+            'creditos-menu' => esc_html__('Menu for credits or similar', 'superpem'),
         ));
 
         /*
