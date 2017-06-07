@@ -720,6 +720,41 @@ a:hover, a:active {
 	border-bottom-color: white;
 }
 
+.pagination {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.pagination .nav-links {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+	padding: .5em 1em;
+	background: white;
+}
+
+.pagination a {
+	text-decoration: none;
+}
+
+.pagination a:focus, .pagination a:hover {
+	color: white;
+	background: #5992E7;
+}
+
+.pagination .current {
+	font-weight: 800;
+	color: #5992E7;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -830,8 +865,10 @@ a:hover, a:active {
 	margin: 0 auto;
 }
 
+/* Single posts */
 @media screen and (min-width: 900px) {
-	.single.has-sidebar .hentry {
+	.single.has-sidebar .hentry,
+	.page .hentry {
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -841,17 +878,32 @@ a:hover, a:active {
 		    -ms-flex-pack: justify;
 		        justify-content: space-between;
 	}
-	.single.has-sidebar .hentry .entry-header {
+	.single.has-sidebar .hentry .entry-header,
+	.page .hentry .entry-header {
 		width: 100%;
 		-webkit-box-flex: 1;
 		    -ms-flex: 1 0 100%;
 		        flex: 1 0 100%;
 	}
-	.single.has-sidebar .hentry .post-content {
+	.single.has-sidebar .hentry .post-content,
+	.page .hentry .post-content {
 		width: 60%;
 	}
-	.single.has-sidebar .hentry .widget-area {
+	.single.has-sidebar .hentry .widget-area,
+	.page .hentry .widget-area {
 		width: 30%;
+	}
+	.page.has-page-sidebar .hentry {
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		    -ms-flex-direction: row-reverse;
+		        flex-direction: row-reverse;
+	}
+	.page:not(.has-page-sidebar) .hentry {
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		margin: 0 auto;
 	}
 }
 
@@ -879,7 +931,9 @@ a:hover, a:active {
 	background: #eee;
 }
 
-.archive-view .post {
+.archive-view .post,
+.archive-view .page {
+	position: relative;
 	background: #fff;
 	border: none;
 }
@@ -899,12 +953,61 @@ a:hover, a:active {
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
 	}
+	.archive-view.has-sidebar .page-header {
+		width: 100%;
+		-webkit-box-flex: 1 0 100%;
+		    -ms-flex-positive: 1 0 100%;
+		        flex-grow: 1 0 100%;
+	}
 	.archive-view.has-sidebar .content-area {
 		width: 60%;
 	}
 	.archive-view.has-sidebar .widget-area {
 		width: 30%;
 	}
+	.archive-view.no-sidebar .site-content {
+		max-width: 680px;
+	}
+}
+
+.page-header {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.page-title {
+	margin: 0 0 .5em;
+}
+
+.archive-description {
+	margin: -1em 0 2em;
+}
+
+.sticky {
+	position: relative;
+}
+
+.sticky::before {
+	content: "";
+	display: block;
+	width: 2em;
+	height: 2em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-width: 0 2em 2em 0;
+	border-color: #eee #eee white;
+	border-style: solid;
+	box-shadow: -1px 2px 2px rgba(26, 26, 26, 0.1);
+}
+
+.index-image img {
+	display: block;
+	margin: 0 auto;
+}
+
+.index-image a:focus > img,
+.index-image a:hover > img {
+	opacity: .8;
 }
 
 .continue-reading {
@@ -912,16 +1015,37 @@ a:hover, a:active {
 }
 
 .continue-reading a {
-	display: inline-block;
+	display: block;
+	position: absolute;
+	bottom: 1.5em;
+	right: 0;
 	padding: .5em 1em;
 	font-size: 90%;
 	text-decoration: none;
 	border: 1px solid #d9d9d9;
+	border-right: none;
 }
 
 .continue-reading a:focus, .continue-reading a:hover {
 	color: white;
 	background: #5992E7;
+}
+
+/*
+ * Content none
+*/
+.no-results,
+.not-found {
+	background: #0E356E;
+	color: #F0F7FB;
+	padding: .5em 2em 2em;
+}
+
+.no-results input.search-submit,
+.not-found input.search-submit {
+	background-color: #F0F7FB;
+	color: #0E356E;
+	border-color: #F0F7FB;
 }
 
 /*--------------------------------------------------------------
@@ -1284,7 +1408,6 @@ button.dropdown-toggle {
 .hentry {
 	margin: 0 0 2em;
 	padding-bottom: 2em;
-	border-bottom: 3px solid #ccc;
 }
 
 .entry-header {
@@ -1422,7 +1545,7 @@ button.dropdown-toggle {
 /* Single Post Imágenes destacadas */
 .full-bleed {
 	width: 100vw;
-	max-height: 600px;
+	max-height: 50vh;
 	margin-top: -1em;
 	margin-left: -1em;
 	margin-bottom: 2em;

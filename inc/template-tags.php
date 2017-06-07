@@ -137,3 +137,19 @@ function superpem_post_navigation() {
 			'<span class="post-title">%title</span>',
 	) );
 }
+
+/*
+ * Cambiar una elipse al final del resumen
+ */
+function superpem_resumen_mas( $more ){
+    return "…";
+}
+add_filter( 'excerpt_more', 'superpem_resumen_mas' );
+
+/*
+ * Cambiar el largo del resumen a 100 palabras
+ */
+function superpem_resumen_long ( $length ){
+    return 60;
+}
+add_filter( 'excerpt_length', 'superpem_resumen_long' );

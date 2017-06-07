@@ -1,7 +1,9 @@
 .archive-view{
     background: #eee;
 
-    .post{
+    .post, 
+    .page{
+        position: relative;
         background: #fff;
         border: none;
 
@@ -17,6 +19,10 @@
                 justify-content: space-between;
                 flex-wrap: wrap;
             }
+            .page-header{
+                width: 100%;
+                flex-grow: 1 0 100%;
+            }
             .content-area{
                 width: $size__ratio-large;
             }
@@ -24,22 +30,75 @@
                 width: $size__ratio-small;
             }
         }
+        &.no-sidebar{
+            .site-content{
+                max-width: 680px;
+            }
+        }
+    }
+}
+
+.page-header{
+    font-family: $font__sans;
+    
+}
+
+.page-title{
+    margin: 0 0 .5em;
+}
+.archive-description{
+    margin: -1em 0 2em;
+}
+
+.sticky{
+    position: relative;
+}
+.sticky::before{
+    content: "";
+    display: block;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-width: 0 2em 2em 0;
+    border-color: #eee #eee white;
+    border-style: solid;
+    box-shadow: -1px 2px 2px hsla(0, 0%, 10%, .1);
+    
+}
+
+.index-image {
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    a {
+        &:focus > img,
+        &:hover > img {
+            opacity: .8;
+        }
     }
 }
 
 .continue-reading {
-    
+
     font-family: $font__sans;
 
     a {
-        display: inline-block;
+        display: block;
+        position: absolute;
+        bottom: 1.5em;
+        right: 0;
         padding: .5em 1em;
         font-size: 90%;
         text-decoration: none;
         border: 1px solid hsl(0, 0%, 85%);
+        border-right: none;
 
         &:focus,
-        &:hover {
+            &:hover {
             color: white;
             background: $color__interactive;
         }
@@ -47,3 +106,17 @@
 
 }
 
+/*
+ * Content none
+*/
+.no-results, 
+.not-found{
+    background: $color__navy;
+    color: $color__gray;
+    padding: .5em 2em 2em;
+    input.search-submit{
+        background-color: $color__gray;
+        color: $color__navy;
+        border-color: $color__gray;
+    }
+}

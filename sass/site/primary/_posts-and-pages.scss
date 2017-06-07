@@ -5,8 +5,6 @@
 .hentry {
     margin: 0 0 2em;
     padding-bottom: 2em;
-    border-bottom: 3px solid $color__background-hr;
-
 }
 
 .entry-header{
@@ -154,11 +152,10 @@
 
 .full-bleed {
     width: 100vw;
-    max-height: 600px;
+    max-height: 50vh;
     margin-top: -1em;
     margin-left: -1em;
     margin-bottom: 2em;
-    //border-top: 1px solid hsl(0, 0%, 90%);
     border-bottom: 1px solid hsl(0, 0%, 90%);
     overflow: hidden;
     background: $color__skin;
