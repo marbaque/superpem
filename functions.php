@@ -66,7 +66,7 @@ if (!function_exists('superpem_setup')) :
 
         // Set up the WordPress core custom background feature.
         add_theme_support('custom-background', apply_filters('superpem_custom_background_args', array(
-            'default-color' => 'cecece',
+            'default-color' => 'f2f2f2',
             'default-image' => '',
         )));
 
@@ -79,6 +79,37 @@ if (!function_exists('superpem_setup')) :
             'height' => 90,
             'flex-width' => true,
         ));
+
+
+        // Add theme support for Custom Header
+        register_default_headers(array(
+            'default-image' => array(
+                'url' => get_template_directory_uri() . '/img/header.jpg',
+                'thumbnail_url' => get_template_directory_uri() . '/img/header.jpg',
+                'description' => __('Default Header Image', 'textdomain')
+            ),
+        ));
+
+        $header_args = array(
+            'default-image' => get_template_directory_uri() . '/img/header.jpg',
+            'width' => 1200,
+            'height' => 960,
+            'flex-width' => true,
+            'flex-height' => true,
+            'uploads' => true,
+            'random-default' => false,
+            'header-text' => true,
+            'default-text-color' => '',
+            'wp-head-callback' => '',
+            'admin-head-callback' => '',
+            'admin-preview-callback' => '',
+            'video' => true,
+            'video-active-callback' => '',
+        );
+        add_theme_support('custom-header', $header_args);
+
+        /* Editor styles */
+        add_editor_style(array('inc/editor-styles.css'));
     }
 
 endif;
@@ -114,10 +145,84 @@ add_filter('wp_resource_hints', 'superpem_resource_hints', 10, 2);
  * @global int $content_width
  */
 function superpem_content_width() {
-    $GLOBALS['content_width'] = apply_filters('superpem_content_width', 640);
+    $GLOBALS['content_width'] = apply_filters('superpem_content_width', 960);
 }
 
 add_action('after_setup_theme', 'superpem_content_width', 0);
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for content images.
+ *
+ * @origin Twenty Seventeen 1.0
+ *
+ * @param string $sizes A source size value for use in a 'sizes' attribute.
+ * @param array  $size  Image size. Accepts an array of width and height
+ *                      values in pixels (in that order).
+ * @return string A source size value for use in a content image 'sizes' attribute.
+ */
+function superpem_content_image_sizes_attr($sizes, $size) {
+    $width = $size[0];
+
+    if (900 <= $width) {
+        $sizes = '(min-width: 900px) 700px, 900px';
+    }
+
+    if (is_active_sidebar('sidebar-1') || is_active_sidebar('sidebar-2') || is_active_sidebar('sidebar-3')) {
+        $sizes = '(min-width: 900px) 600px, 900px';
+    }
+
+    return $sizes;
+}
+
+add_filter('wp_calculate_image_sizes', 'superpem_content_image_sizes_attr', 10, 2);
+
+/**
+ * Filter the `sizes` value in the header image markup.
+ *
+ * @origin Twenty Seventeen 1.0
+ *
+ * @param string $html   The HTML image tag markup being filtered.
+ * @param object $header The custom header object returned by 'get_custom_header()'.
+ * @param array  $attr   Array of the attributes for the image tag.
+ * @return string The filtered header image HTML.
+ */
+function superpem_header_image_tag($html, $header, $attr) {
+    if (isset($attr['sizes'])) {
+        $html = str_replace($attr['sizes'], '100vw', $html);
+    }
+    return $html;
+}
+
+add_filter('get_header_image_tag', 'superpem_header_image_tag', 10, 3);
+
+/**
+ * Add custom image sizes attribute to enhance responsive image functionality
+ * for post thumbnails.
+ *
+ * @origin Twenty Seventeen 1.0
+ *
+ * @param array $attr       Attributes for the image markup.
+ * @param int   $attachment Image attachment ID.
+ * @param array $size       Registered image size or flat array of height and width dimensions.
+ * @return string A source size value for use in a post thumbnail 'sizes' attribute.
+ */
+function superpem_post_thumbnail_sizes_attr($attr, $attachment, $size) {
+
+    if (!is_singular()) {
+        if (is_active_sidebar('sidebar-1') || is_active_sidebar('sidebar-2') || is_active_sidebar('sidebar-3')) {
+            $attr['sizes'] = '(max-width: 900px) 90vw, 800px';
+        } else {
+            $attr['sizes'] = '(max-width: 1200px) 90vw, 1000px';
+        }
+    } else {
+        $attr['sizes'] = '100vw';
+    }
+
+    return $attr;
+}
+
+add_filter('wp_get_attachment_image_attributes', 'superpem_post_thumbnail_sizes_attr', 10, 3);
 
 /**
  * Register widget area.
@@ -162,7 +267,6 @@ function superpem_widgets_init() {
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
-    
 }
 
 add_action('widgets_init', 'superpem_widgets_init');
@@ -193,6 +297,19 @@ function superpem_scripts() {
 
 add_action('wp_enqueue_scripts', 'superpem_scripts');
 
+
+/*
+ * Agregar una barra de buscar en el menu principal
+ */
+add_filter('wp_nav_menu_items', 'search_box_function', 10, 2);
+
+function search_box_function($nav, $args) {
+    if ($args->theme_location == 'primary')
+        return $nav .= '<li class="menu-search">' . get_search_form( false ) . '</li>';
+
+    return $nav;
+}
+
 /**
  * Implement the Custom Header feature.
  */
@@ -218,103 +335,14 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Load custom post types: multimedia.
+ */
+require get_template_directory() . '/inc/custom-posts.php';
 
 /**
-* Plugin Name: Páginas de contenidos principales para multimedia
-* Description: Simple plugin que agrega custom post types
-* 
-*/
+ * Load bredacrumbs.
+ */
+require get_template_directory() . '/inc/breadcrumbs.php';
 
-function my_custom_posttypes(){
-	
-	//Artículos de prensa
-	$labels = array(
-        'name'               => 'Contenido multimedia',
-        'singular_name'      => 'Contenido multimedia',
-        'menu_name'          => 'Contenido multimedia',
-        'name_admin_bar'     => 'Contenido multimedia',
-        'add_new'            => 'Agregar contenido nuevo',
-        'add_new_item'       => 'Agregar página de contenido',
-        'new_item'           => 'Nueva página de contenido',
-        'edit_item'          => 'Editar página de contenido',
-        'view_item'          => 'Ver',
-        'all_items'          => 'Contenido existente',
-        'search_items'       => 'Buscar páginas de contenido',
-        'parent_item_colon'  => 'Página de contenidos principales:',
-        'not_found'          => 'No se encontraron páginas de contenido.',
-        'not_found_in_trash' => 'No hay páginas de contenidos en el basurero.',
-    );
-    
-    $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable' => true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'menu_icon'          => 'dashicons-book',
-        'query_var'          => true,
-        'rewrite'            => array( 'slug' => 'contenidos' ),
-        'capability_type'    => 'page',
-        'has_archive'        => false,
-        'hierarchical'       => true,
-        'menu_position'      => 5,
-        'supports'           => array( 
-            'title', 
-            'editor', 
-            'thumbnail', 
-            'custom-fields', 
-            'revisions', 
-            'page-attributes' 
-            ),
-        'show_in_nav_menus' => true,
-        'show_in_admin_bar' => true,
-        'show_in_rest' => true
-	);
-	register_post_type('multimedia', $args);
-             
-}
-
-add_action('init', 'my_custom_posttypes');
-
-
-
-function my_rewrite_flush() {
-    my_custom_posttypes();
-    flush_rewrite_rules();
-}
-register_activation_hook( __FILE__, 'my_rewrite_flush' );
-
-
-
-// Custom Taxonomies
-function custom_taxonomies() {
-	
-    // Nombre del proyecto asignado a cada investigador (puede estar en varios!)
-    $labels = array(
-        'name'              => 'Autores',
-        'singular_name'     => 'Autor',
-        'search_items'      => 'Buscar autor',
-        'all_items'         => 'Todos',
-        'parent_item'       => 'ID principal de autor',
-        'parent_item_colon' => 'ID principal de autor:',
-        'edit_item'         => 'Editar autor',
-        'update_item'       => 'Actualizar autor asignado',
-        'add_new_item'      => 'Agregar nombre de autor(a)',
-        'new_item_name'     => 'Nuevo nombre de autor',
-        'menu_name'         => 'Autor asignado',
-    );
-
-    $args = array(
-        'hierarchical'      => true,
-        'labels'            => $labels,
-        'show_ui'           => true,
-        'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'autor' ),
-    );
-
-    register_taxonomy( 'autor', array( 'multimedia' ), $args );
-}
-
-add_action( 'init', 'custom_taxonomies' );
 

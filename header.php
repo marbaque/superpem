@@ -24,9 +24,9 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'superpem' ); ?></a>
 
 	<?php if ( is_front_page() ) : ?>
-	<header role="banner" class="header-image">
+        <header role="banner" class="header-image" style="background-image:url('<?php header_image(); ?>');">
         <?php else : ?>
-        <header role="banner" class="header-image-interna">   
+        <header role="banner" class="header-image-interna" style="background-image:url('<?php header_image(); ?>');">   
         <?php endif; // End header image check. ?>
             
 		<div class="site-branding">

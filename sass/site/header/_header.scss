@@ -1,5 +1,6 @@
 .header-image,
 .header-image-interna{
+    position: relative;
     width: 100%;
     overflow: hidden;
     margin: 0;
@@ -8,10 +9,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
     background-position: top;
     .site-branding {
         max-width: 80%;
         text-align: center;
+        z-index: 99;
         .custom-logo-link{
             margin-bottom: .5em;
             height: 35px;
@@ -58,6 +61,7 @@
         }
     }
 }
+
 .header-image{
     height: 90vh;
     max-height: 60vh;
@@ -82,16 +86,16 @@
 //barra superior que contiene el menu
 .site-header {
     position: relative;
-    padding: 0;
+    padding: 1em;
+    font-family: $font__sans;
+    color: #fff;
     background-color: $color__navy;
-    height: 40px;
-    flex-wrap: wrap;
-    overflow: visible;
+    height: auto;
+
 
     @media screen and (min-width: $query__small) {
-        height: auto;
-        padding: 0;
-        overflow: visible;
+        padding: .5em 1em;
+        
     }
 }
 
@@ -99,11 +103,10 @@
     .site-header{
         display: flex;
         justify-content: flex-start;
-        padding: 2px 0;
     }
 
     .site-branding{
-        width: 35%;
+        width: 50%;
         flex: 1 0 auto;
     }
     .site-navigation{

@@ -1,23 +1,24 @@
 .main-navigation {
     display: block;
+    font-size: .9em;
+    letter-spacing: .05em;
     font-family: $font__sans;
-    font-weight: 400;
-    font-size: 80%;
-    line-height: 2;
+    font-weight: 200;
     clear: left;
 
     ul {
         display: none;
         list-style: none;
-        margin: 40px 0 0 0; //40 px es el alto de la barra superior en móviles
+        margin: 0;
+        padding-top: 2em;
         padding-left: 0;
-        background: $color__navy;
 
         ul {
             display: none;
             top: 1.5em;
             z-index: 99999;
-            margin: 0;
+            padding-top: .5em;
+            margin-bottom: 1em;
 
             ul {
                 top: 0;
@@ -28,12 +29,12 @@
 
                 &:hover > ul,
                     &.focus > ul {
-                    left: 100%;
+                    //left: 100%;
                 }
             }
 
             a {
-                width: 100%;
+                width: 200px;
             }
         }
 
@@ -50,7 +51,7 @@
     a {
         display: inline-block;
         width: 100%;
-        padding: .5em 1em;
+        padding: .5em 1em .5em 0;
         text-decoration: none;
         color: #fff;
     }
@@ -64,11 +65,11 @@
     .current-menu-item > a,
     .current_page_ancestor > a,
     .current-menu-ancestor > a {
-        background-color: $color__interactive;
+
     }
 
     .menu-item-has-children,
-    .page-item-has-children {
+    .page_item_has_children {
         min-width: 218px;
     }
     .menu-item-has-children > a,
@@ -77,87 +78,81 @@
     }
 }
 
-//botón + para desplegar submenús
 button.dropdown-toggle {
     position: absolute;
+    top: 0;
     right: 0;
     border: none;
     background: inherit;
     color: white;
-    font-size: .8em;
-    line-height: 2.5;
-    padding: .4em 1em .4em .5em;
+    line-height: inherit;
+    padding: .5em;
+    margin: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    opacity: .5;
 }
 
-//botón de contenidos, visible sólo en móviles
 .menu-toggle {
     position: absolute;
     top: 0;
     left: 0;
+    height: 40px;
+    width: 100%;
     display: block;
-    height: 100%;
-    width: 85%;
-    margin: 0;
-    padding: .6em .8em;
-    font-family: $font__sans;
+    //margin: 1.2em 1.2em 0 0;
+    padding: 1em 1.5em;
     text-align: left;
     font-size: 80%;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: $color__navy;
-    border: 0;
-    background-color: $color__skin;
-    -webkit-border-radius: 0;
+    color: white;
+    background: $color__skin;
+    border:0;
     -moz-border-radius: 0;
+    -webkit-border-radius: 0;
     border-radius: 0;
 }
 
-/* Toggle small menu and sub-menus on */
+/* Toggle small menu and children on */
 .toggled-on ul,
 .sub-menu.toggled-on {
     display: block;
 }
 
-
-//estilos para menu en destok
+//estilos para destok
 @media screen and (min-width: $query__small) {
     .menu-toggle {
         display: none;
     }
 
     .main-navigation {
-        margin: 0 auto;
-        
+
         .menu-item-has-children > a,
         .page_item_has_children > a {
             padding-right: 2em;
-            background: hsla(0, 0%, 100%, .2);
-        }
-
-        a{
-            background: hsla(0, 0%, 100%, .1);
+            //background: hsla(0, 0%, 100%, .1);
         }
 
         ul {
-            margin: 0;
             display: block;
             display: flex;
             flex-wrap: wrap;
-            padding: 0;
+            padding-top: 0;
+            justify-content: flex-start;
 
             ul {
                 flex-direction: column;
                 background: hsla(0, 0%, 100%, .1);
-                padding-top: 0;
                 margin-left: 0;
-                background: $color__skin;
 
                 li {
                     padding-left: 0;
-                    display: block;
-                    clear: both;
+
 
                     a {
-                        width: 218px;
+                        width: 200px;
                         background: none;
                     }
                 }
@@ -170,23 +165,11 @@ button.dropdown-toggle {
             }
         }
 
-    }  
-    .main-navigation>div>ul>li{
-        margin: 2px; //solo los items padres del menu
     }
-    .main-navigation>div>ul>li>ul{
-        //solo el primer submenu
-        position: absolute;
-        top: 45px;
-        box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        
-        
-    }
+
 }
 
-
-
-@media screen and (min-width: $query__small) {
+@media screen and (min-width: $query__medium) {
     .main-navigation {
 
         ul {
@@ -204,3 +187,91 @@ button.dropdown-toggle {
 
     }
 }
+
+/*
+** Estilos para la search bar
+*/
+
+li.menu-search{
+    margin: .5em 0;
+
+
+
+    .search-form{
+        display:flex;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;  
+
+        label{
+            height: 40px;
+            width: 80%;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .search-field{
+            width: 100%;
+            height: 40px;
+            border: 0 none;
+            flex-grow: 1;
+            outline: 0;
+            padding-left: .5em;
+            -webkit-appearance: none;
+            -moz-border-radius: 3px 0 0 3px;
+            -webkit-border-radius: 3px 0 0 3px;
+            border-radius: 3px 0 0 3px;  
+
+        }
+        .search-field:focus{
+            outline: 0;
+            background: #fff;
+            -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+            -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+            box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        }
+        .search-field::-webkit-input-placeholder {
+            color: #999;
+            font-weight: normal;
+            font-style: italic;
+            font-size: 80%;
+            line-height: 2.2;
+        }
+
+        .search-field:-moz-placeholder {
+            color: #999;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .search-field:-ms-input-placeholder {
+            color: #999;
+            font-weight: normal;
+            font-style: italic;
+        } 
+        .search-submit{
+            width: 20%;
+            height: 40px;
+            font-size: 80%;
+            flex-shrink: 0;
+            border: 0 none;
+            background: $color__skin;
+            -webkit-appearance: none;
+
+            -moz-border-radius: 0 3px 3px 0;
+            -webkit-border-radius: 0 3px 3px 0;
+            border-radius: 0 3px 3px 0; 
+        }
+    }
+}
+
+@media screen and (min-width: $query__small){
+    li.menu-search{
+        margin: 0;
+    }
+}
+
+

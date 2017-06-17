@@ -1,21 +1,36 @@
 a {
-	color: $color__link;
+    color: $color__link;
 
-	&:visited {
-		color: $color__link-visited;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
-	&:focus {
-		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
-	}
+    &:visited {
+        color: $color__link-visited;
+    }
+    &:hover,
+        &:focus,
+        &:active {
+        color: $color__link-hover;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    &:hover,
+        &:active {
+        outline: 0;
+    }
+    /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
 
 .page-content,
@@ -23,14 +38,14 @@ a {
 .entry-summary,
 .comment-content {
 
-	a {
-		text-decoration: none;
-		border-bottom: 2px solid #ddd;
+    a {
+        text-decoration: none;
+        border-bottom: 2px solid #ddd;
 
-		&:focus,
-		&:hover {
-			color: $color__interactive;
-			border-bottom: 2px solid $color__interactive;
-		}
-	}
+        &:focus,
+            &:hover {
+            color: $color__interactive;
+            border-bottom: 2px solid $color__interactive;
+        }
+    }
 }

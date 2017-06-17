@@ -152,24 +152,28 @@ function superpem_multimedia_navigation() {
         '<span class="screen-reader-text">' . __('Next content:', 'superpem') . '</span> ' .
         '<span class="post-title">%title</span>',
     ));
+    
 }
 
-/*
- * Cambiar una elipse al final del resumen
- */
+    /*
+     * Cambiar una elipse al final del resumen
+     */
 
-function superpem_resumen_mas($more) {
-    return "…";
-}
+    function superpem_resumen_mas($more) {
+        return "…";
+    }
 
-add_filter('excerpt_more', 'superpem_resumen_mas');
+    add_filter('excerpt_more', 'superpem_resumen_mas');
 
-/*
- * Cambiar el largo del resumen a 100 palabras
- */
 
-function superpem_resumen_long($length) {
-    return 60;
-}
 
-add_filter('excerpt_length', 'superpem_resumen_long');
+    /*
+     * Cambiar el largo del resumen
+     */
+
+    function superpem_resumen_long($length) {
+        return 60;
+    }
+
+    add_filter('excerpt_length', 'superpem_resumen_long');
+    

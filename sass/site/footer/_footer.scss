@@ -3,7 +3,7 @@
     @include font-size(0.85);
     text-align: center;
     position: relative;
-    background-color: #eee;
+    background-color: $color__navy;
     
     a{
         text-decoration: none;
@@ -37,4 +37,16 @@
 
         }
     }
+}
+
+.topscroll{
+    display: block;
+    background: $color__gray;
+    font-family: $font__sans;
+    text-align: center;
+    font-size: 70%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 2em 0;
+    text-decoration: none;
 }

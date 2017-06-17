@@ -8,25 +8,24 @@
  *
  * @package Super_PEM
  */
-
 ?>
 
-	</div><!-- #content -->
-        
-        <div class="topscroll">
-            <?php echo __( 'Back to top', 'superpem' ); ?>
-        </div>
-        
-        <?php get_sidebar( 'footer' ); ?>
+        </div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php wp_nav_menu( array( 'theme_location' => 'creditos-menu', 'menu_id' => 'creditos-menu' ) ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+        <a href="#" class="topscroll">
+            <?php echo __('Back to top', 'superpem'); ?>
+        </a>
 
-<?php wp_footer(); ?>
+        <?php get_sidebar('footer'); ?>
 
-</body>
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info">
+                <?php wp_nav_menu(array('theme_location' => 'creditos-menu', 'menu_id' => 'creditos-menu')); ?>
+            </div><!-- .site-info -->
+        </footer><!-- #colophon -->
+        </div><!-- #page -->
+
+        <?php wp_footer(); ?>
+
+    </body>
 </html>
