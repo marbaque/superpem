@@ -10,6 +10,8 @@
     }
     .post__content{
         padding: 1em 1em 2em;
+        position: relative;
+        border: 2px solid #f2f2f2;
         
         @media screen and (min-width: $query__medium){
             padding: 2em;
@@ -48,7 +50,7 @@
 }
 
 .page-title{
-    margin: 0 0 .5em;
+    margin: 0 0 2em;
     @extend .entry-title;
 }
 .archive-description{

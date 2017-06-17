@@ -977,6 +977,8 @@ a:hover, a:active {
 
 .archive-view .post__content {
 	padding: 1em 1em 2em;
+	position: relative;
+	border: 2px solid #f2f2f2;
 }
 
 @media screen and (min-width: 900px) {
@@ -1018,7 +1020,7 @@ a:hover, a:active {
 }
 
 .page-title {
-	margin: 0 0 .5em;
+	margin: 0 0 2em;
 }
 
 .archive-description {
@@ -1208,6 +1210,8 @@ a:hover, a:active {
 	color: #fff;
 	background-color: #0E356E;
 	height: auto;
+	/* Safari */
+	transition: height 2s;
 }
 
 @media screen and (min-width: 600px) {
@@ -1241,10 +1245,9 @@ Header Menu
 */
 .main-navigation {
 	display: block;
-	font-size: .9em;
-	letter-spacing: .05em;
+	font-size: 90%;
 	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 200;
+	font-weight: 400;
 	clear: left;
 }
 
@@ -1272,8 +1275,10 @@ Header Menu
 	padding-left: 1em;
 }
 
-.main-navigation ul ul a {
-	width: 200px;
+@media scree and (min-width: 600px) {
+	.main-navigation ul ul a {
+		width: 200px;
+	}
 }
 
 .main-navigation ul li:hover > ul,
@@ -1295,7 +1300,21 @@ Header Menu
 
 .main-navigation a:hover,
 .main-navigation a:focus {
-	text-decoration: underline;
+	color: #5992E7;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+	color: #20CB9A;
+}
+
+.main-navigation .current_page_item > a:before,
+.main-navigation .current-menu-item > a:before,
+.main-navigation .current_page_ancestor > a:before,
+.main-navigation .current-menu-ancestor > a:before {
+	content: '\203A';
 }
 
 .main-navigation .menu-item-has-children,
@@ -1440,7 +1459,7 @@ li.menu-search .search-form .search-field {
 	outline: 0;
 	padding-left: .5em;
 	-webkit-appearance: none;
-	border-radius: 3px 0 0 3px;
+	border-radius: 0;
 }
 
 li.menu-search .search-form .search-field:focus {
@@ -1483,7 +1502,13 @@ li.menu-search .search-form .search-submit {
 
 @media screen and (min-width: 600px) {
 	li.menu-search {
-		margin: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: auto !important;
+		width: 260px;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 1 auto;
+		        flex: 0 1 auto;
 	}
 }
 
