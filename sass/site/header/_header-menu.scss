@@ -128,8 +128,8 @@ button.dropdown-toggle {
     .menu-toggle {
         display: none;
     }
-    .main-navigation>ul>li{
-        margin-bottom: 1em!important;
+    .main-navigation>div>ul>li{
+        margin-bottom: .5em;
     }
 
     .main-navigation {
@@ -146,12 +146,13 @@ button.dropdown-toggle {
             display: flex;
             flex-wrap: wrap;
             padding-top: 0;
-            justify-content: space-between;
+            justify-content: flex-start;
 
             ul {
                 flex-direction: column;
                 background: hsla(0, 0%, 100%, .1);
                 margin-left: 0;
+                margin-bottom: 0;
 
                 li {
                     padding-left: 0;
