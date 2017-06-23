@@ -280,6 +280,8 @@ function superpem_scripts() {
     wp_enqueue_style('superpem-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
 
     wp_enqueue_style('superpem-style', get_stylesheet_uri());
+    
+    wp_enqueue_script('superpem-fontawesome', 'https://use.fontawesome.com/f9e8212f45.js');
 
     wp_enqueue_script('superpem-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
     wp_localize_script('superpem-navigation', 'superpemScreenReaderText', array(
