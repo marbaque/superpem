@@ -1,6 +1,5 @@
 .main-navigation {
     display: block;
-    font-size: 90%;
     font-family: $font__sans;
     font-weight: 400;
     line-height: 1.4;
@@ -33,11 +32,7 @@
                 }
             }
 
-            a {
-                @media scree and (min-width:$query__small){
-                    width: 200px;   
-                }
-            }
+
         }
 
         li:hover > ul,
@@ -73,7 +68,7 @@
 
     .menu-item-has-children,
     .page_item_has_children {
-        min-width: 218px;
+        //width: 218px;
     }
     .menu-item-has-children > a,
     .page_item_has_children > a {
@@ -88,7 +83,9 @@ button.dropdown-toggle {
     border: none;
     background: inherit;
     color: white;
-    line-height: inherit;
+    font-size: 150%;
+    text-align: left;
+    line-height: .4;
     padding: .5em;
     margin: 0;
     -moz-border-radius: 0;
@@ -124,10 +121,16 @@ button.dropdown-toggle {
     display: block;
 }
 
-//estilos para destok
+/*-----------------------------------------
+** Estilos para desktop
+------------------------------------------*/
+
 @media screen and (min-width: $query__small) {
     .menu-toggle {
         display: none;
+    }
+    .main-navigation>div>ul>li{
+        margin-bottom: .5em;
     }
 
     .main-navigation {
@@ -135,9 +138,10 @@ button.dropdown-toggle {
         .menu-item-has-children > a,
         .page_item_has_children > a {
             padding-right: 2em;
-            //background: hsla(0, 0%, 100%, .1);
+            background: hsla(0, 0%, 100%, .1);
+            min-width: 200px;
         }
-
+        
         ul {
             display: block;
             display: flex;
@@ -149,12 +153,10 @@ button.dropdown-toggle {
                 flex-direction: column;
                 background: hsla(0, 0%, 100%, .1);
                 margin-left: 0;
+                margin-bottom: 0;
 
                 li {
                     padding-left: 0;
-
-
-
                     a {
                         width: 200px;
                         background: none;
@@ -180,7 +182,7 @@ button.dropdown-toggle {
     .main-navigation {
 
         ul {
-            justify-content: flex-start;
+            //justify-content: flex-start;
             padding-top: 0;
 
             /* If you want dropdowns to open on hover, uncomment this: */
@@ -195,9 +197,9 @@ button.dropdown-toggle {
     }
 }
 
-/*
+/*------------------------------------------
 ** Estilos para la search bar
-*/
+------------------------------------------*/
 
 li.menu-search{
     margin: .5em 0;
@@ -210,7 +212,18 @@ li.menu-search{
         flex: 0 1 auto;
     }
 
+    margin-top: .5em;
 
+    i{
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 2.4;
+    }
     .search-form{
         display:flex;
         justify-content: flex-start;
@@ -242,6 +255,7 @@ li.menu-search{
             outline: 0;
             padding-left: .5em;
             border: 0 none;
+            padding-left: 45px;
             -webkit-appearance: none;
             -moz-border-radius: 0;
             -webkit-border-radius: 0;
@@ -250,8 +264,9 @@ li.menu-search{
             background-color: transparent;
             color: $color__skin;
 
+            background: transparent;
+            color: $color__gray;
             font-family: $font__sans;
-
         }
 
         .search-field:focus{
@@ -265,6 +280,12 @@ li.menu-search{
             -moz-border-radius: 0;
             -webkit-border-radius: 0;
             border-radius: 0;
+            -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+            -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+            box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+
+            background: $color__skin;
+            color: $color__gray;
         }
         .search-field::-webkit-input-placeholder {
             color: $color__skin;
@@ -274,6 +295,8 @@ li.menu-search{
             font-style: italic;
             font-size: 80%;
             line-height: 2.2;
+
+            color: $color__skin;
         }
 
         .search-field:-moz-placeholder {

@@ -83,14 +83,18 @@
 
 
 
-//barra superior que contiene el menu
+/*
+** Barra superior que contiene el menu
+*/
 .site-header {
     position: relative;
     padding: 1em;
     font-family: $font__sans;
+    font-size: 90%;
     color: #fff;
     background-color: $color__navy;
     height: auto;
+    
     -webkit-transition: height 2s; /* Safari */
     transition: height 2s;
 
@@ -102,8 +106,8 @@
 
 @media screen and (min-width: $query__small){
     .site-header{
-        display: flex;
-        justify-content: flex-start;
+        //display: flex;
+        //justify-content: flex-start;
     }
 
     .site-branding{

@@ -1,6 +1,6 @@
 .site-footer{
     font-family: $font__sans;
-    @include font-size(0.85);
+    font-size: 70%;
     text-align: center;
     position: relative;
     background-color: $color__navy;
@@ -32,6 +32,7 @@
                 &:hover,
                 &:focus{
                     text-decoration: underline;
+                    color: #fff;
                 }
             }
 

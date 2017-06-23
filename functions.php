@@ -278,7 +278,7 @@ function superpem_scripts() {
 
     //enquue fuentes de google: Lora
     wp_enqueue_style('superpem-fonts', 'https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i');
-
+    
     wp_enqueue_style('superpem-style', get_stylesheet_uri());
     
     wp_enqueue_script('superpem-fontawesome', 'https://use.fontawesome.com/f9e8212f45.js');
@@ -307,7 +307,7 @@ add_filter('wp_nav_menu_items', 'search_box_function', 10, 2);
 
 function search_box_function($nav, $args) {
     if ($args->theme_location == 'primary')
-        return $nav .= '<li class="menu-search">' . get_search_form( false ) . '</li>';
+        return $nav .= '<li class="menu-search"><i class="fa fa-search"></i>' . get_search_form( false ) . '</li>';
 
     return $nav;
 }
