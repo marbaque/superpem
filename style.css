@@ -976,7 +976,8 @@ a:hover, a:active {
 }
 
 .archive-view .post,
-.archive-view .page {
+.archive-view .page,
+.archive-view .multimedia {
 	position: relative;
 	background: #fff;
 	border: 2px solid #f2f2f2;
@@ -1209,15 +1210,16 @@ a:hover, a:active {
 	display: none;
 }
 
-/*
+/*--------------------------------------------
 ** Barra superior que contiene el menu
-*/
+--------------------------------------------*/
 .site-header {
 	position: relative;
-	padding: 1em;
+	display: block;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 90%;
-	color: #fff;
+	font-size: 80%;
+	font-weight: 400;
+	color: #F0F7FB;
 	background-color: #0E356E;
 	height: auto;
 	/* Safari */
@@ -1226,7 +1228,7 @@ a:hover, a:active {
 
 @media screen and (min-width: 600px) {
 	.site-header {
-		padding: .5em 1em;
+		padding: 0 1em;
 	}
 }
 
@@ -1242,15 +1244,16 @@ a:hover, a:active {
 	}
 }
 
-/*
+/*---------------------------------
 Header Menu
-*/
+----------------------------------*/
 .main-navigation {
 	display: block;
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 400;
-	line-height: 1.4;
 	clear: left;
+}
+
+.main-navigation ul.menu {
+	padding: 1em;
 }
 
 .main-navigation ul {
@@ -1259,6 +1262,7 @@ Header Menu
 	margin: 0;
 	padding-top: 2em;
 	padding-left: 0;
+	transition: all 2s;
 }
 
 .main-navigation ul ul {
@@ -1292,6 +1296,8 @@ Header Menu
 	padding: .5em 1em .5em 0;
 	text-decoration: none;
 	color: #fff;
+	line-height: 1.5;
+	background: rgba(255, 255, 255, 0.1);
 }
 
 .main-navigation a:hover,
@@ -1306,6 +1312,11 @@ Header Menu
 	color: #20CB9A;
 }
 
+.main-navigation .menu-item-has-children,
+.main-navigation .page_item_has_children {
+	width: 220px;
+}
+
 .main-navigation .menu-item-has-children > a,
 .main-navigation .page_item_has_children > a {
 	padding-right: 2em;
@@ -1315,22 +1326,22 @@ button.dropdown-toggle {
 	position: absolute;
 	top: 0;
 	right: 0;
-	border: none;
+	border: 0 none;
 	background: inherit;
 	color: white;
 	font-size: 150%;
-	text-align: left;
-	line-height: .4;
-	padding: .5em;
+	line-height: 1;
+	text-align: right;
+	padding: .2em .4em;
 	margin: 0;
-	border-radius: 0;
 	opacity: .5;
 }
 
+button.dropdown-toggle:hover {
+	opacity: 1;
+}
+
 .menu-toggle {
-	position: absolute;
-	top: 0;
-	left: 0;
 	height: 40px;
 	width: 100%;
 	display: block;
@@ -1359,22 +1370,25 @@ button.dropdown-toggle {
 		display: none;
 	}
 	.main-navigation > div > ul > li {
-		margin-bottom: .5em;
+		margin: 0.25em .1em;
 	}
 	.main-navigation .menu-item-has-children > a,
 	.main-navigation .page_item_has_children > a {
 		padding-right: 2em;
-		background: rgba(255, 255, 255, 0.1);
-		min-width: 200px;
+		min-width: 220px;
+	}
+	.main-navigation ul.menu {
+		padding: 0;
+	}
+	.main-navigation ul.sub-menu li ul li a {
+		padding-left: 2em !important;
 	}
 	.main-navigation ul {
-		display: block;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
-		padding-top: 0;
 		-webkit-box-pack: start;
 		    -ms-flex-pack: start;
 		        justify-content: flex-start;
@@ -1384,16 +1398,17 @@ button.dropdown-toggle {
 		-webkit-box-direction: normal;
 		    -ms-flex-direction: column;
 		        flex-direction: column;
-		background: rgba(255, 255, 255, 0.1);
 		margin-left: 0;
 		margin-bottom: 0;
+		padding-top: 0;
 	}
 	.main-navigation ul ul li {
 		padding-left: 0;
+		max-width: 220px;
 	}
 	.main-navigation ul ul li a {
-		width: 200px;
-		background: none;
+		width: 100%;
+		padding-left: 1em;
 	}
 	.main-navigation ul ul li.menu-search {
 		margin-left: auto;
@@ -1421,14 +1436,13 @@ button.dropdown-toggle {
 ------------------------------------------*/
 li.menu-search {
 	margin: .5em 0;
-	margin-top: .5em;
 }
 
 @media screen and (min-width: 600px) {
 	li.menu-search {
 		margin-top: 0;
 		margin-bottom: 0;
-		margin-left: auto;
+		margin-left: auto !important;
 		width: 260px;
 		-webkit-box-flex: 0;
 		    -ms-flex: 0 1 auto;
@@ -1444,23 +1458,16 @@ li.menu-search i {
 	width: 40px;
 	height: 40px;
 	text-align: center;
-	line-height: 2.4;
+	line-height: 2;
+	color: #2B63B6;
 }
 
 li.menu-search .search-form {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: start;
-	    -ms-flex-pack: start;
-	        justify-content: flex-start;
-	-ms-flex-wrap: nowrap;
-	    flex-wrap: nowrap;
 	border-radius: 3px;
 }
 
 li.menu-search .search-form label {
-	height: 40px;
+	height: 30px;
 	width: 80%;
 	-webkit-box-flex: 1;
 	    -ms-flex-positive: 1;
@@ -1468,59 +1475,46 @@ li.menu-search .search-form label {
 	position: relative;
 }
 
-li.menu-search .search-form label:before {
-	background: red;
-	display: block;
-	position: relative;
-	width: 40px;
-	height: 40px;
-}
-
 li.menu-search .search-form .search-field {
-	width: auto;
-	height: 40px;
+	width: 50%;
+	height: 30px;
 	border: 0 none;
 	-webkit-box-flex: 1;
 	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	outline: 0;
-	padding-left: .5em;
 	border: 0 none;
-	padding-left: 45px;
+	padding-left: 2.5em;
 	-webkit-appearance: none;
 	border-radius: 0;
-	background-color: transparent;
-	color: #2B63B6;
 	background: transparent;
-	color: #F0F7FB;
 	font-family: Helvetica, Arial, sans-serif;
+	font-size: 95%;
+	font-weight: 400;
+	color: #F0F7FB;
+	transition: all .5s;
 }
 
 li.menu-search .search-form .search-field:focus {
+	width: 100%;
 	outline: 0;
 	border: 0 none;
-	background: #2B63B6;
-	color: #0E356E;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+	box-shadow: 0 0 2px white inset;
 	border-radius: 0;
-	box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
-	background: #2B63B6;
-	color: #F0F7FB;
+	border-color: transparent;
+	background: rgba(255, 255, 255, 0.1);
+	color: #777;
 }
 
 li.menu-search .search-form .search-field::-webkit-input-placeholder {
-	color: #2B63B6;
 	outline: 0;
 	border: 0 none;
 	font-weight: normal;
 	font-style: italic;
-	font-size: 80%;
-	line-height: 2.2;
-	color: #2B63B6;
+	color: #F0F7FB;
 }
 
 li.menu-search .search-form .search-field:-moz-placeholder {
-	color: #2B63B6;
 	outline: 0;
 	border: 0 none;
 	font-weight: normal;
@@ -1552,7 +1546,6 @@ li.menu-search .search-form .search-submit {
 
 .hentry {
 	margin: 0 0 2em;
-	padding-bottom: 2em;
 }
 
 .entry-header {

@@ -144,11 +144,11 @@ function superpem_post_navigation() {
 
 function superpem_multimedia_navigation() {
     the_post_navigation(array(
-        'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'superpem') . '</span> ' .
+        'prev_text'     => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'superpem') . '</span> ' .
         '<span class="screen-reader-text">' . __('Previous content:', 'superpem') . '</span> ' .
         '<span class="post-title">%title</span>',
         
-        'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span> ' .
+        'next_text'     => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span> ' .
         '<span class="screen-reader-text">' . __('Next content:', 'superpem') . '</span> ' .
         '<span class="post-title">%title</span>',
     ));

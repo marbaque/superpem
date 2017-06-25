@@ -12,7 +12,7 @@
 
 		// Add dropdown toggle that displays child menu items.
 		var dropdownToggle = $( '<button />', { 'class': 'dropdown-toggle', 'aria-expanded': false })
-			.append( $( '<span />', { 'class': 'dropdown-symbol', text: '⁝' }) )
+			.append( $( '<span />', { 'class': 'dropdown-symbol', text: '+' }) )
 			.append( $( '<span />', { 'class': 'screen-reader-text', text: superpemScreenReaderText.expand }) );
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
@@ -22,7 +22,7 @@
 			var _this = $( this ),
 				screenReaderSpan = _this.find( '.screen-reader-text' );
 				dropdownSymbol = _this.find( '.dropdown-symbol' );
-				dropdownSymbol.text( dropdownSymbol.text() === '×' ? '⁝' : '×' );
+				dropdownSymbol.text( dropdownSymbol.text() === '×' ? '+' : '×' );
 
 			e.preventDefault();
 			_this.toggleClass( 'toggled-on' );

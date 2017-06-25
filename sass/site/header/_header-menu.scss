@@ -1,16 +1,18 @@
 .main-navigation {
     display: block;
-    font-family: $font__sans;
-    font-weight: 400;
-    line-height: 1.4;
     clear: left;
-
+    ul.menu{
+        padding: 1em;
+    }
     ul {
         display: none;
         list-style: none;
         margin: 0;
         padding-top: 2em;
         padding-left: 0;
+        
+        -webkit-transition: all 2s;
+        transition: all 2s;
 
         ul {
             display: none;
@@ -51,6 +53,8 @@
         padding: .5em 1em .5em 0;
         text-decoration: none;
         color: #fff;
+        line-height: 1.5;
+        background: hsla(0, 0%, 100%, .1);
     }
 
     a:hover,
@@ -68,7 +72,7 @@
 
     .menu-item-has-children,
     .page_item_has_children {
-        //width: 218px;
+        width: 220px;
     }
     .menu-item-has-children > a,
     .page_item_has_children > a {
@@ -80,28 +84,25 @@ button.dropdown-toggle {
     position: absolute;
     top: 0;
     right: 0;
-    border: none;
+    //height: 40px;
+    border: 0 none;
     background: inherit;
     color: white;
     font-size: 150%;
-    text-align: left;
-    line-height: .4;
-    padding: .5em;
+    line-height: 1;
+    text-align: right;
+    padding: .2em .4em;
     margin: 0;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    border-radius: 0;
     opacity: .5;
+    &:hover{
+        opacity: 1;
+    }
 }
 
 .menu-toggle {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 40px;
     width: 100%;
     display: block;
-    //margin: 1.2em 1.2em 0 0;
     padding: 1em 1.5em;
     text-align: left;
     font-size: 80%;
@@ -130,7 +131,10 @@ button.dropdown-toggle {
         display: none;
     }
     .main-navigation>div>ul>li{
-        margin-bottom: .5em;
+        margin: 0.25em .1em;
+    }
+    .main-navigation>div>ul>li>a{
+        //min-height: 40px;
     }
 
     .main-navigation {
@@ -138,28 +142,34 @@ button.dropdown-toggle {
         .menu-item-has-children > a,
         .page_item_has_children > a {
             padding-right: 2em;
-            background: hsla(0, 0%, 100%, .1);
-            min-width: 200px;
+            min-width: 220px;
         }
-        
+        ul.menu{
+            padding: 0;
+        }
+        ul.sub-menu li ul li a{
+            padding-left: 2em!important;
+        }
+
         ul {
-            display: block;
             display: flex;
             flex-wrap: wrap;
-            padding-top: 0;
             justify-content: flex-start;
 
             ul {
                 flex-direction: column;
-                background: hsla(0, 0%, 100%, .1);
+                
                 margin-left: 0;
                 margin-bottom: 0;
+                padding-top: 0;
+               
 
                 li {
                     padding-left: 0;
+                    max-width: 220px;
                     a {
-                        width: 200px;
-                        background: none;
+                        width: 100%;
+                        padding-left: 1em;
                     }
                 }
                 li.menu-search{
@@ -207,13 +217,10 @@ li.menu-search{
     @media screen and (min-width: $query__small){
         margin-top: 0;
         margin-bottom: 0;
-        margin-left: auto;
+        margin-left: auto!important;
         width: 260px;
         flex: 0 1 auto;
     }
-
-    margin-top: .5em;
-
     i{
         position: absolute;
         left: 0;
@@ -222,85 +229,68 @@ li.menu-search{
         width: 40px;
         height: 40px;
         text-align: center;
-        line-height: 2.4;
+        line-height: 2;
+        color: $color__skin;
     }
     .search-form{
-        display:flex;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
 
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         border-radius: 3px;  
-
+        
         label{
-            height: 40px;
+            height: 30px;
             width: 80%;
             flex-grow: 1;
             position: relative;
         }
-
-        label:before{
-            background: red;
-            display: block;
-            position: relative;
-            width: 40px;
-            height: 40px;
-        }
         .search-field{
-            width: auto;
-            height: 40px;
+            width: 50%;
+            height: 30px;
             border: 0 none;
             flex-grow: 1;
             outline: 0;
-            padding-left: .5em;
             border: 0 none;
-            padding-left: 45px;
+            padding-left: 2.5em;
             -webkit-appearance: none;
             -moz-border-radius: 0;
             -webkit-border-radius: 0;
             border-radius: 0;
-
-            background-color: transparent;
-            color: $color__skin;
-
             background: transparent;
-            color: $color__gray;
             font-family: $font__sans;
+            font-size: 95%;
+            font-weight: 400;
+            color: $color__gray;
+            
+            -webkit-transition: all .5s;
+            transition: all .5s;
         }
 
         .search-field:focus{
+            width: 100%;
             outline: 0;
             border: 0 none;
-            background: $color__skin;
-            color: $color__navy;
-            -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-            -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-            box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+            -moz-box-shadow: 0 0 2px white inset;
+            -webkit-box-shadow: 0 0 2px white inset;
+            box-shadow: 0 0 2px white inset;
             -moz-border-radius: 0;
             -webkit-border-radius: 0;
             border-radius: 0;
-            -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-            -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
-            box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+            border-color: transparent;
 
-            background: $color__skin;
-            color: $color__gray;
+            background: hsla(0, 100%, 100%, .1);
+            color: #777;
+            
         }
         .search-field::-webkit-input-placeholder {
-            color: $color__skin;
             outline: 0;
             border: 0 none;
             font-weight: normal;
             font-style: italic;
-            font-size: 80%;
-            line-height: 2.2;
-
-            color: $color__skin;
-        }
+            color: $color__gray;
+       }
 
         .search-field:-moz-placeholder {
-            color: $color__skin;
             outline: 0;
             border: 0 none;
             font-weight: normal;
