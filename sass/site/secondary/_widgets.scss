@@ -71,8 +71,10 @@
 }
 .widget_search{
     @extend li.menu-search;
-    background: $color__navy;
+    width: 100%;
+    background: #fff;
     padding: 1em;
+    color: #777;
     input[type="search"]{
         padding: 0 0.5em!important;
     }

@@ -43,7 +43,7 @@ if (!function_exists('superpem_setup')) :
          */
         add_theme_support('post-thumbnails');
         add_image_size('superpem-full-bleed', 2000, 500, true);
-        add_image_size('superpem-index-img', 680, 240, true);
+        add_image_size('superpem-index-img', 780, 240, true);
 
 
         // This theme uses wp_nav_menu() in one location.
@@ -75,8 +75,8 @@ if (!function_exists('superpem_setup')) :
 
         //add theme support for Custom logo
         add_theme_support('custom-logo', array(
-            'width' => 90,
-            'height' => 90,
+            'width' => 100,
+            'height' => 100,
             'flex-width' => true,
         ));
 
