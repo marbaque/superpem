@@ -66,8 +66,8 @@ function superpem_custom_breadcrumbs() {
                 $post_type_object = get_post_type_object($post_type);
                 $post_type_archive = get_post_type_archive_link($post_type);
               
-                echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
-                echo '<li class="separator"> ' . $separator . ' </li>';
+//                echo '<li class="item-cat item-custom-post-type-' . $post_type . '"><a class="bread-cat bread-custom-post-type-' . $post_type . '" href="' . $post_type_archive . '" title="' . $post_type_object->labels->name . '">' . $post_type_object->labels->name . '</a></li>';
+//                echo '<li class="separator"> ' . $separator . ' </li>';
               
             }
               

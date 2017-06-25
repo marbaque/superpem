@@ -69,6 +69,14 @@
 .widget_search .search-submit {
     display: none;
 }
+.widget_search{
+    @extend li.menu-search;
+    background: $color__navy;
+    padding: 1em;
+    input[type="search"]{
+        padding: 0 0.5em!important;
+    }
+}
 
 /* Pages and Menu widgets */
 .widget_pages .children,

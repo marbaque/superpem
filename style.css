@@ -613,7 +613,8 @@ a:hover, a:active {
 .entry-summary a,
 .comment-content a {
 	text-decoration: none;
-	border-bottom: 2px solid #ddd;
+	border-bottom: 2px solid #20CB9A;
+	font-weight: 700;
 }
 
 .page-content a:focus, .page-content a:hover,
@@ -625,6 +626,13 @@ a:hover, a:active {
 .comment-content a:hover {
 	color: #5992E7;
 	border-bottom: 2px solid #5992E7;
+}
+
+.page-content a:visited,
+.entry-content a:visited,
+.entry-summary a:visited,
+.comment-content a:visited {
+	border-bottom: 2px solid #2B63B6;
 }
 
 /*--------------------------------------------------------------
@@ -1257,9 +1265,17 @@ Header Menu
 	margin: 0;
 }
 
+.main-navigation ul.sub-menu a {
+	padding-left: 2em;
+}
+
+.main-navigation ul.sub-menu ul a {
+	padding-left: 3em;
+}
+
 .main-navigation ul {
+	display: none;
 	list-style: none;
-	transition: all 2s;
 }
 
 .main-navigation ul ul {
@@ -1268,14 +1284,6 @@ Header Menu
 	z-index: 99999;
 	padding-top: .5em;
 	margin-bottom: 1em;
-}
-
-.main-navigation ul ul ul {
-	top: 0;
-}
-
-.main-navigation ul ul li {
-	padding-left: 1em;
 }
 
 .main-navigation ul li:hover > ul,
@@ -1290,7 +1298,7 @@ Header Menu
 .main-navigation a {
 	display: inline-block;
 	width: 100%;
-	padding: .5em 1em .5em 1em;
+	padding: .8em 1em .8em 1em;
 	text-decoration: none;
 	color: #fff;
 	line-height: 1.5;
@@ -1322,7 +1330,7 @@ button.dropdown-toggle {
 	background: inherit;
 	color: white;
 	font-size: 150%;
-	line-height: 1;
+	line-height: 1.5;
 	text-align: right;
 	padding: .2em .4em;
 	margin: 0;
@@ -1354,6 +1362,11 @@ button.dropdown-toggle:hover {
 	display: block;
 }
 
+.fix-bar {
+	position: fixed;
+	top: 0;
+}
+
 /*-----------------------------------------
 ** Estilos para desktop
 ------------------------------------------*/
@@ -1381,7 +1394,10 @@ button.dropdown-toggle:hover {
 	}
 	.main-navigation ul {
 		display: -webkit-box;
+		/* OLD - iOS 6-, Safari 3.1-6, BB7 */
 		display: -ms-flexbox;
+		/* TWEENER - IE 10 */
+		/* NEW - Safari 6.1+. iOS 7.1+, BB10 */
 		display: flex;
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;
@@ -1400,17 +1416,17 @@ button.dropdown-toggle:hover {
 	}
 	.main-navigation ul ul li {
 		padding-left: 0;
-		max-width: 220px;
+		width: 220px;
+		-webkit-box-flex: 0;
+		    -ms-flex: 0 1 auto;
+		        flex: 0 1 auto;
 	}
 	.main-navigation ul ul li a {
 		width: 100%;
 		padding-left: 1em;
 	}
-	.main-navigation ul ul li.menu-search {
+	.main-navigation ul ul li.menu-search, .main-navigation ul ul .widget_search {
 		margin-left: auto;
-	}
-	.main-navigation ul li a {
-		padding: .4em 1em;
 	}
 }
 
@@ -1430,13 +1446,13 @@ button.dropdown-toggle:hover {
 /*------------------------------------------
 ** Estilos para la search bar
 ------------------------------------------*/
-li.menu-search {
+li.menu-search, .widget_search {
 	margin: .5em 0;
 	padding: 0 .5em;
 }
 
 @media screen and (min-width: 600px) {
-	li.menu-search {
+	li.menu-search, .widget_search {
 		margin-top: 0;
 		margin-bottom: 0;
 		margin-left: auto !important;
@@ -1447,7 +1463,7 @@ li.menu-search {
 	}
 }
 
-li.menu-search i {
+li.menu-search i, .widget_search i {
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -1455,16 +1471,16 @@ li.menu-search i {
 	width: 40px;
 	height: 40px;
 	text-align: center;
-	line-height: 2;
+	line-height: 2.7;
 	color: #2B63B6;
 }
 
-li.menu-search .search-form {
+li.menu-search .search-form, .widget_search .search-form {
 	border-radius: 3px;
 }
 
-li.menu-search .search-form label {
-	height: 30px;
+li.menu-search .search-form label, .widget_search .search-form label {
+	height: 40px;
 	width: 80%;
 	-webkit-box-flex: 1;
 	    -ms-flex-positive: 1;
@@ -1472,16 +1488,16 @@ li.menu-search .search-form label {
 	position: relative;
 }
 
-li.menu-search .search-form .search-field {
+li.menu-search .search-form .search-field, .widget_search .search-form .search-field {
 	width: 50%;
-	height: 30px;
+	height: 40px;
 	border: 0 none;
 	-webkit-box-flex: 1;
 	    -ms-flex-positive: 1;
 	        flex-grow: 1;
 	outline: 0;
 	border: 0 none;
-	padding-left: 2.5em;
+	padding-left: 2em;
 	-webkit-appearance: none;
 	border-radius: 0;
 	background: transparent;
@@ -1492,7 +1508,7 @@ li.menu-search .search-form .search-field {
 	transition: all .5s;
 }
 
-li.menu-search .search-form .search-field:focus {
+li.menu-search .search-form .search-field:focus, .widget_search .search-form .search-field:focus {
 	width: 100%;
 	outline: 0;
 	border: 0 none;
@@ -1503,7 +1519,11 @@ li.menu-search .search-form .search-field:focus {
 	color: #777;
 }
 
-li.menu-search .search-form .search-field::-webkit-input-placeholder {
+li.menu-search .search-form .search-field:focus::-webkit-input-placeholder, .widget_search .search-form .search-field:focus::-webkit-input-placeholder {
+	color: #777;
+}
+
+li.menu-search .search-form .search-field::-webkit-input-placeholder, .widget_search .search-form .search-field::-webkit-input-placeholder {
 	outline: 0;
 	border: 0 none;
 	font-weight: normal;
@@ -1511,14 +1531,14 @@ li.menu-search .search-form .search-field::-webkit-input-placeholder {
 	color: #F0F7FB;
 }
 
-li.menu-search .search-form .search-field:-moz-placeholder {
+li.menu-search .search-form .search-field:-moz-placeholder, .widget_search .search-form .search-field:-moz-placeholder {
 	outline: 0;
 	border: 0 none;
 	font-weight: normal;
 	font-style: italic;
 }
 
-li.menu-search .search-form .search-field:-ms-input-placeholder {
+li.menu-search .search-form .search-field:-ms-input-placeholder, .widget_search .search-form .search-field:-ms-input-placeholder {
 	color: #2B63B6;
 	outline: 0;
 	border: 0 none;
@@ -1526,7 +1546,7 @@ li.menu-search .search-form .search-field:-ms-input-placeholder {
 	font-style: italic;
 }
 
-li.menu-search .search-form .search-submit {
+li.menu-search .search-form .search-submit, .widget_search .search-form .search-submit {
 	display: none;
 }
 
@@ -2057,6 +2077,15 @@ li.menu-search .search-form .search-submit {
 /* Search widget. */
 .widget_search .search-submit {
 	display: none;
+}
+
+.widget_search {
+	background: #0E356E;
+	padding: 1em;
+}
+
+.widget_search input[type="search"] {
+	padding: 0 0.5em !important;
 }
 
 /* Pages and Menu widgets */

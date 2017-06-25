@@ -5,11 +5,15 @@
         padding: 0;
         margin: 0;
     }
+    ul.sub-menu a{
+        padding-left: 2em;
+    }
+    ul.sub-menu ul a{
+        padding-left: 3em;
+    }
     ul {
-        //display: none;
+        display: none;
         list-style: none;
-        -webkit-transition: all 2s;
-        transition: all 2s;
 
         ul {
             display: none;
@@ -17,26 +21,12 @@
             z-index: 99999;
             padding-top: .5em;
             margin-bottom: 1em;
-
-            ul {
-                top: 0;
-            }
-
-            li {
-                padding-left: 1em;
-
-                &:hover > ul,
-                    &.focus > ul {
-                    //left: 100%;
-                }
-            }
-
-
         }
 
         li:hover > ul,
             li.focus > ul {
             left: auto;
+            
         }
     }
 
@@ -47,7 +37,7 @@
     a {
         display: inline-block;
         width: 100%;
-        padding: .5em 1em .5em 1em;
+        padding: .8em 1em .8em 1em;
         text-decoration: none;
         color: #fff;
         line-height: 1.5;
@@ -81,12 +71,11 @@ button.dropdown-toggle {
     position: absolute;
     top: 0;
     right: 0;
-    //height: 40px;
     border: 0 none;
     background: inherit;
     color: white;
     font-size: 150%;
-    line-height: 1;
+    line-height: 1.5;
     text-align: right;
     padding: .2em .4em;
     margin: 0;
@@ -117,6 +106,12 @@ button.dropdown-toggle {
 .toggled-on ul,
 .sub-menu.toggled-on {
     display: block;
+}
+
+
+.fix-bar{
+    position: fixed;
+    top: 0;
 }
 
 /*-----------------------------------------
@@ -152,11 +147,15 @@ button.dropdown-toggle {
         }
 
         ul {
-            display: flex;
+            display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+            display: -ms-flexbox;  /* TWEENER - IE 10 */
+            display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+            display: flex;   
             flex-wrap: wrap;
             justify-content: flex-start;
 
             ul {
+
                 flex-direction: column;
 
                 margin-left: 0;
@@ -166,7 +165,8 @@ button.dropdown-toggle {
 
                 li {
                     padding-left: 0;
-                    max-width: 220px;
+                    width: 220px;
+                    flex: 0 1 auto;
                     a {
                         width: 100%;
                         padding-left: 1em;
@@ -179,7 +179,7 @@ button.dropdown-toggle {
 
             li {
                 a {
-                    padding: .4em 1em;
+                    //padding: .4em 1em;
                 }
             }
         }
@@ -229,7 +229,7 @@ li.menu-search{
         width: 40px;
         height: 40px;
         text-align: center;
-        line-height: 2;
+        line-height: 2.7;
         color: $color__skin;
     }
     .search-form{
@@ -239,19 +239,19 @@ li.menu-search{
         border-radius: 3px;  
 
         label{
-            height: 30px;
+            height: 40px;
             width: 80%;
             flex-grow: 1;
             position: relative;
         }
         .search-field{
             width: 50%;
-            height: 30px;
+            height: 40px;
             border: 0 none;
             flex-grow: 1;
             outline: 0;
             border: 0 none;
-            padding-left: 2.5em;
+            padding-left: 2em;
             -webkit-appearance: none;
             -moz-border-radius: 0;
             -webkit-border-radius: 0;
@@ -280,6 +280,9 @@ li.menu-search{
 
             background: #fff;
             color: #777;
+            &::-webkit-input-placeholder{
+                color: #777;
+            }
 
         }
         .search-field::-webkit-input-placeholder {
