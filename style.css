@@ -1346,7 +1346,7 @@ button.dropdown-toggle:hover {
 	opacity: 1;
 }
 
-.menu-toggle {
+.menu-toggle, .menu-toggle:focus {
 	height: 40px;
 	width: 100%;
 	display: block;

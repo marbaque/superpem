@@ -142,38 +142,66 @@ function superpem_post_navigation() {
  * Navegation for página de contenido multimedia
  */
 
-function superpem_multimedia_navigation() {
-    the_post_navigation(array(
-        'prev_text'     => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'superpem') . '</span> ' .
-        '<span class="screen-reader-text">' . __('Previous content:', 'superpem') . '</span> ' .
-        '<span class="post-title">%title</span>',
-        
-        'next_text'     => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span> ' .
-        '<span class="screen-reader-text">' . __('Next content:', 'superpem') . '</span> ' .
-        '<span class="post-title">%title</span>',
-    ));
+function getPrevNext() {
+    $pagelist = get_pages('sort_column=menu_order&sort_order=asc&post_type=multimedia');
+    $pages = array();
+    foreach ($pagelist as $page) {
+        $pages[] += $page->ID;
+    }
+
+    $current = array_search(get_the_ID(), $pages);
+    $prevID = $pages[$current - 1];
+    $nextID = $pages[$current + 1];
     
+    echo '<nav class="navigation post-navigation"><div class"nav-links">';
+    
+    if (is_post_type_hierarchical(get_post_type())) {
+        if (!empty($prevID) && $prevID > 0) {
+            echo '<div class="nav-previous">';
+            echo '<a href="';
+            echo get_permalink($prevID);
+            echo '"';
+            echo 'title="';
+            echo get_the_title($prevID);
+            echo'"><span class="meta-nav" aria-hidden="true">' . __('Previous', 'superpem')
+            . '</span> <span class="screen-reader-text">' . __('Previous content:', 'superpem') . '</span>'
+            . '<span class="post-title">' . get_the_title($prevID) . '</span></a>';
+            echo "</div>";
+        }
+        if (!empty($nextID)) {
+            echo '<div class="nav-next">';
+            echo '<a href="';
+            echo get_permalink($nextID);
+            echo '"';
+            echo 'title="';
+            echo get_the_title($nextID);
+            echo'"><span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span>'
+            . '<span class="screen-reader-text">' . __('Next content:', 'superpem') . '</span>'
+            . '<span class="post-title">' . get_the_title($nextID) . '</span></a>';
+            echo "</div>";
+        }
+    }
+    echo '</nav></div>';
 }
 
-    /*
-     * Cambiar una elipse al final del resumen
-     */
+/*
+ * Cambiar una elipse al final del resumen
+ */
 
-    function superpem_resumen_mas($more) {
-        return "…";
-    }
+function superpem_resumen_mas($more) {
+    return "…";
+}
 
-    add_filter('excerpt_more', 'superpem_resumen_mas');
+add_filter('excerpt_more', 'superpem_resumen_mas');
 
 
 
-    /*
-     * Cambiar el largo del resumen
-     */
+/*
+ * Cambiar el largo del resumen
+ */
 
-    function superpem_resumen_long($length) {
-        return 60;
-    }
+function superpem_resumen_long($length) {
+    return 60;
+}
 
-    add_filter('excerpt_length', 'superpem_resumen_long');
-    
+add_filter('excerpt_length', 'superpem_resumen_long');

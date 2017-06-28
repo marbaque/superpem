@@ -21,6 +21,12 @@
 
     <?php superpem_custom_breadcrumbs(); ?>
 
+    <div class="mmtools">
+        <a href="" class="smaller"></a>
+        <a href="" class="reset"></a>
+        <a href="" class="bigger"></a>
+        <a href="" class="pdf"></a>
+    </div>
 
 
     <div class="entry-content post-content">
@@ -30,9 +36,10 @@
 
         <?php
         the_content();
-
-        superpem_multimedia_navigation();
+        
+        getPrevNext();
         ?>
+       
 
     </div><!-- .entry-content -->
 
