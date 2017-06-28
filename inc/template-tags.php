@@ -143,18 +143,36 @@ function superpem_post_navigation() {
  */
 
 function getPrevNext() {
-    $pagelist = get_pages('sort_column=menu_order&sort_order=asc&post_type=multimedia');
+    $args = array(// including all of the defaults here so you can play with them
+        'sort_order' => 'ASC',
+        'sort_column' => 'menu_order',
+        'hierarchical' => 1,
+        'exclude' => '',
+        'include' => '',
+        'meta_key' => '',
+        'meta_value' => '',
+        'authors' => '',
+        'child_of' => 0,
+        'parent' => -1,
+        'exclude_tree' => '',
+        'number' => '',
+        'offset' => 1,
+        'post_type' => 'multimedia',
+        'post_status' => 'publish'
+    );
+    $pagelist = get_pages($args);
     $pages = array();
+
     foreach ($pagelist as $page) {
         $pages[] += $page->ID;
     }
 
     $current = array_search(get_the_ID(), $pages);
-    $prevID = $pages[$current - 1];
-    $nextID = $pages[$current + 1];
-    
+    $prevID = (isset($pages[$current - 1])) ? $pages[$current - 1] : '';
+    $nextID = (isset($pages[$current + 1])) ? $pages[$current + 1] : '';
+
     echo '<nav class="navigation post-navigation"><div class"nav-links">';
-    
+
     if (is_post_type_hierarchical(get_post_type())) {
         if (!empty($prevID) && $prevID > 0) {
             echo '<div class="nav-previous">';

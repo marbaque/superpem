@@ -19,8 +19,6 @@
         </figure>
     <?php } ?>
 
-    <?php superpem_custom_breadcrumbs(); ?>
-
     <div class="mmtools">
         <a href="" class="smaller"></a>
         <a href="" class="reset"></a>
