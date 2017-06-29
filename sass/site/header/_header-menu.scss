@@ -37,7 +37,7 @@
     a {
         display: inline-block;
         width: 100%;
-        padding: .6em 1em;
+        padding: .6em .7em;
         text-decoration: none;
         color: #fff;
         line-height: 1.5;
@@ -84,6 +84,11 @@ button.dropdown-toggle {
     &:hover{
         opacity: 1;
     }
+    
+    .dropdown-symbol{
+        font-family: FontAwesome;
+    }
+    
 }
 
 .menu-toggle, .menu-toggle:focus {
@@ -145,7 +150,7 @@ button.dropdown-toggle {
             padding: 0;
         }
         ul.sub-menu a{
-            padding-left: 1em;
+            padding-left: 1.25em;
         }
         ul.sub-menu ul a{
             padding-left: 2em;
@@ -226,7 +231,7 @@ li.menu-search{
         width: 260px;
         flex: 0 1 auto;
     }
-    i{
+/*    i{
         position: absolute;
         left: 0;
         top: 0;
@@ -236,15 +241,26 @@ li.menu-search{
         text-align: center;
         line-height: 2.7;
         color: $color__gray;
-    }
+    }*/
 
 }
 
 .search-form{
-
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;  
+    
+    position: relative;
+    
+    &:before{
+        font-family: FontAwesome;
+        content: "\f002";
+        height: 40px;
+        display: inline-block;
+        color: #fff;
+        position: absolute;
+        top: 0;
+        left: 1em;
+        z-index: 1;
+        line-height: 2.4;
+    }
 
     label{
         height: 40px;

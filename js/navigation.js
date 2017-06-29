@@ -8,22 +8,23 @@
 (function ($) {
  
     var masthead, menuToggle, siteNavContain, siteNavigation;
-
+    
     function initMainNavigation(container) {
 
         // Add dropdown toggle that displays child menu items.
         var dropdownToggle = $('<button />', {'class': 'dropdown-toggle', 'aria-expanded': false})
-                .append($('<span />', {'class': 'dropdown-symbol', text: '+'}))
+                .append($('<span />', {'class': 'dropdown-symbol', html: '<i class="fa fa-angle-down"></i>'}))
                 .append($('<span />', {'class': 'screen-reader-text', text: superpemScreenReaderText.expand}));
 
         container.find('.menu-item-has-children > a, .page_item_has_children > a').after(dropdownToggle);
 
 
         container.find('.dropdown-toggle').click(function (e) {
-            var _this = $(this),
+            var _this = $(this), 
                     screenReaderSpan = _this.find('.screen-reader-text');
             dropdownSymbol = _this.find('.dropdown-symbol');
-            dropdownSymbol.text(dropdownSymbol.text() === '×' ? '+' : '×');
+            dropdownSymbol.html(dropdownSymbol.html() == '<i class="fa fa-angle-up"></i>' ? '<i class="fa fa-angle-down"></i>' : '<i class="fa fa-angle-up"></i>');
+            
 
             e.preventDefault();
             _this.toggleClass('toggled-on');

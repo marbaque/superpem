@@ -17,12 +17,12 @@
 <div class="tools">
     <?php superpem_custom_breadcrumbs(); ?>
 
-    <div class="mmtools">
-        <a href="" class="smaller" title="<?php echo __('Smaller text', 'superpem'); ?>">A</a>
-        <a href="" class="reset" title="<?php echo __('Reset text size', 'superpem'); ?>">A</a>
-        <a href="" class="bigger" title="<?php echo __('Bigger text', 'superpem'); ?>">A</a>
-        <a href="" class="pdf" title="<?php echo __('Dowload PDF file', 'superpem'); ?>">PDF</a>
-    </div>
+    <ul class="mmtools">
+        <li><a href="" class="smaller" title="<?php echo __('Smaller text', 'superpem'); ?>">A</a></li>
+        <li><a href="" class="reset" title="<?php echo __('Reset text size', 'superpem'); ?>">A</a></li>
+        <li><a href="" class="bigger" title="<?php echo __('Bigger text', 'superpem'); ?>">A</a></li> 
+        <li><a href="" class="pdf" title="<?php echo __('Dowload PDF file', 'superpem'); ?>"><i class="fa fa-file-pdf" aria-hidden="true"></i> PDF</a></li>     
+    </ul>
 
 </div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

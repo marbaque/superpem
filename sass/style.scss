@@ -56,6 +56,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "typography/typography";
 
 /*--------------------------------------------------------------
+# Font-awesome icons
+--------------------------------------------------------------*/
+@import "fonts/fontawesome/scss/font-awesome";
+
+/*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
 @import "elements/elements";
@@ -104,4 +109,3 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 --------------------------------------------------------------*/
 @import "media/media";
-
