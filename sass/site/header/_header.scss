@@ -11,6 +11,7 @@
     justify-content: center;
     background-size: cover;
     background-position: top;
+
     .site-branding {
         max-width: 80%;
         text-align: center;
@@ -28,8 +29,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            height: 65px;
+            height: auto;
             font-size: .8em;
+            font-family: $font__sans;
+
+
             @media screen and (min-width: $query__small){
                 font-size: 1em;
             }
@@ -45,7 +49,6 @@
             a {
                 color:$color__navy;
                 text-decoration: none;
-
                 &:hover,
                     &:focus {
                     text-decoration: none;
@@ -58,6 +61,7 @@
             font-size: .9em;
             font-style: italic;
             font-weight: 100;
+            color: $color__navy;
         }
     }
 }
@@ -88,18 +92,18 @@
 --------------------------------------------*/
 
 .site-header {
-    position: relative;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1;
     display: block;
     font-family: $font__sans;
-    font-size: 80%;
+    font-size: 90%;
     font-weight: 400;
     color: $color__gray;
     background-color: $color__navy;
     height: auto;
 
-    -webkit-transition: height 2s; /* Safari */
-    transition: height 2s;
-    
+
 
     @media screen and (min-width: $query__small) {
         padding: 0 1em;

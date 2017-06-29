@@ -9,7 +9,6 @@
     .site{
         max-width: $size__max-width;
         margin: 0 auto;
-        box-shadow: 0 3px 8px hsla(0,100%,0%,0.4);
     }
 }
 
@@ -65,7 +64,7 @@
                 margin: 0 auto;
             }
             .post-content {
-                width: 100%;
+                width: 80%;
             }
         }
     }

@@ -63,5 +63,3 @@
 	</div><!-- #masthead -->
 
 	<div id="content" class="site-content">
-            
-            <?php superpem_custom_breadcrumbs(); ?>
