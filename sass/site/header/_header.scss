@@ -97,13 +97,13 @@
     z-index: 1;
     display: block;
     font-family: $font__sans;
-    font-size: 85%;
+    font-size: 80%;
     font-weight: 400;
     color: $color__gray;
     background-color: $color__navy;
     height: auto;
     @media screen and (min-width: $query__small) {
-        padding: 0 1em;
+        padding: 0 .5em;
 
     }
 }

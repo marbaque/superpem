@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying page content in single-multimedia.php
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -8,31 +8,31 @@
  */
 ?>
 
-<figure class="imagen-destacada full-bleed">
-    <?php
-    the_post_thumbnail('superpem-full-bleed');
-    ?>
-</figure>
+<?php if (has_post_thumbnail()) { ?>
+    <figure class="imagen-destacada full-bleed">
+        <?php
+        the_post_thumbnail('superpem-full-bleed');
+        ?>
+    </figure>
 
-<div class="tools">
+<?php } ?>
+
+<div class="tools-container">
     <?php superpem_custom_breadcrumbs(); ?>
 
-    <ul class="mmtools">
-        <li><a href="" class="smaller" title="<?php echo __('Smaller text', 'superpem'); ?>">A</a></li>
-        <li><a href="" class="reset" title="<?php echo __('Reset text size', 'superpem'); ?>">A</a></li>
-        <li><a href="" class="bigger" title="<?php echo __('Bigger text', 'superpem'); ?>">A</a></li> 
-        <li><a href="" class="pdf" title="<?php echo __('Dowload PDF file', 'superpem'); ?>"><i class="fa fa-file-pdf" aria-hidden="true"></i> PDF</a></li>     
-    </ul>
+    <div class="mmtools">
+        <?php
+        if (function_exists('zeno_font_resizer_place')) {
+            ?>
+        <span class="label">Tamaño de texto</span>
+            <?php
+            zeno_font_resizer_place();
+        }
+        ?>
+    </div>
 
 </div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-    <?php if (has_post_thumbnail()) { ?>
-
-
-    <?php } ?>
-
-
 
 
 
@@ -40,6 +40,10 @@
         <header class="entry-header">
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
         </header><!-- .entry-header -->
+
+        <div class="entry-meta">
+            <--! agregar autor aqui, no seria visible -->
+        </div><!-- .entry-meta -->
 
         <?php
         the_content();

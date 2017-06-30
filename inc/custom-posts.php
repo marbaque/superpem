@@ -7,7 +7,7 @@
  */
 function my_custom_posttypes() {
 
-    //Artículos de prensa
+    //Contenidos multimedia
     $labels = array(
         'name' => 'Contenido multimedia',
         'singular_name' => 'Contenido multimedia',
@@ -18,7 +18,7 @@ function my_custom_posttypes() {
         'new_item' => 'Nueva página de contenido',
         'edit_item' => 'Editar contenido multimedia',
         'view_item' => 'Ver',
-        'all_items' => 'Contenido existente',
+        'all_items' => 'Todos el contenido',
         'search_items' => 'Buscar páginas de contenido',
         'parent_item_colon' => 'Página de contenidos principales:',
         'not_found' => 'No se encontraron páginas de contenido.',
@@ -65,7 +65,7 @@ register_activation_hook(__FILE__, 'my_rewrite_flush');
 // Custom Taxonomies
 function custom_taxonomies() {
 
-    // Nombre del proyecto asignado a cada investigador (puede estar en varios!)
+    // Nombre del autor
     $labels = array(
         'name' => 'Autores',
         'singular_name' => 'Autor',
