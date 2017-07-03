@@ -218,28 +218,35 @@
     font-size: 70%;
     color: #555;
     //breadcrumbs
+    
     #breadcrumbs{
+        display: none;
 
-        list-style: none;
-        margin: 0 0 1em;
-        overflow:hidden;
-        flex-shrink: 1;
-        flex-order: 2;
-        flex-grow: 2;
-        padding: 0;
+        @media screen and (min-width: $query__small){
+            display: inline-block;
+            list-style: none;
+            margin: 0 0 1em;
+            overflow:hidden;
+            flex-shrink: 1;
+            flex-order: 2;
+            flex-grow: 2;
+            padding: 0;
+            li{
+                display:inline-block;
+                vertical-align:middle;
+                margin-right:.5em;
+            }
+            .separator{
+                font-size:18px;
+                font-weight:200;
+                color:#ccc;
+            }
+        }
+
+
     }
 
-    #breadcrumbs li{
-        display:inline-block;
-        vertical-align:middle;
-        margin-right:.5em;
-    }
 
-    #breadcrumbs .separator{
-        font-size:18px;
-        font-weight:200;
-        color:#ccc;
-    }
 
     //mmtools
     .mmtools{

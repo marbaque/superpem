@@ -72,7 +72,7 @@
 .widget_search{
     @extend li.menu-search;
     width: 100%;
-    background: #fff;
+    background: $color__navy;
     padding: 1em;
     color: #777;
    
@@ -154,11 +154,8 @@
 
 /* Search widget */
 .widget_search input[type="search"] {
-    box-sizing: border-box;
     width: 100%;
-    padding: .5em 1em;
-    border: 1px solid #c3c3c3;
-    border-radius: 0;
+    
 }
 
 /* Calendar widget */

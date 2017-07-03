@@ -67,10 +67,10 @@
 }
 
 .header-image{
-    height: 90vh;
-    max-height: 60vh;
+    height: 80vh;
+    //max-height: 60vh;
     @media screen and (min-width: $query__small){
-        height: 60vw;
+        height: 90vh;
     }
 }
 .header-image-interna{
@@ -97,7 +97,7 @@
     z-index: 1;
     display: block;
     font-family: $font__sans;
-    font-size: 80%;
+    font-size: 90%;
     font-weight: 400;
     color: $color__gray;
     background-color: $color__navy;

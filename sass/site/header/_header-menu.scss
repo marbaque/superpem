@@ -231,17 +231,6 @@ li.menu-search{
         width: 260px;
         flex: 0 1 auto;
     }
-/*    i{
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 10;
-        width: 40px;
-        height: 40px;
-        text-align: center;
-        line-height: 2.7;
-        color: $color__gray;
-    }*/
 
 }
 
@@ -260,6 +249,7 @@ li.menu-search{
         left: 1em;
         z-index: 1;
         line-height: 2.4;
+        font-size: 100%;
     }
 
     label{
@@ -280,7 +270,7 @@ li.menu-search{
         -moz-border-radius: 0;
         -webkit-border-radius: 0;
         border-radius: 0;
-        background: $color__navy;
+        background: hsla(0, 100%, 0%, .2);
         font-family: $font__sans;
         font-size: 95%;
         font-weight: 400;

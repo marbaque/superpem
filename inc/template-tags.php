@@ -196,10 +196,9 @@ function getPrevNext() {
             echo'"><span class="meta-nav" aria-hidden="true">' . __('Next', 'superpem') . '</span>'
             . '<span class="screen-reader-text">' . __('Next content:', 'superpem') . '</span>'
             . '<span class="post-title">' . get_the_title($nextID) . '</span></a>';
-            echo "</div>";
+            echo "</div></nav>";
         }
     }
-    echo '</nav></div>';
 }
 
 /*

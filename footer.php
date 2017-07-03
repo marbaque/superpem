@@ -12,11 +12,11 @@
 
         </div><!-- #content -->
 
+        <?php get_sidebar('footer'); ?>
+        
         <a href="#" class="topscroll">
             <?php echo __('Back to top', 'superpem'); ?>
         </a>
-
-        <?php get_sidebar('footer'); ?>
 
         <footer id="colophon" class="site-footer" role="contentinfo">
             <div class="site-info">
