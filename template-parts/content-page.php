@@ -20,7 +20,7 @@
     <?php } ?>
 
 
-
+    <?php get_template_part('template-parts/tools'); ?>
     <div class="entry-content post-content">
         <header class="entry-header">
             <?php the_title('<h1 class="entry-title">', '</h1>'); ?>

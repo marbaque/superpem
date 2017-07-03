@@ -268,7 +268,7 @@ textarea {
 	font-family: "Lora", Georgia, "Times New Roman", Times, serif;
 	font-size: 18px;
 	font-size: 1.125rem;
-	line-height: 1.65;
+	line-height: 1.7;
 }
 
 @media screen and (600px) {
@@ -3697,10 +3697,13 @@ a:hover, a:active {
 	overflow: hidden;
 }
 
-.comment-navigation a,
+.comment-navigation a, .comment-navigation a:visited,
 .posts-navigation a,
+.posts-navigation a:visited,
 .post-navigation a,
-.paging-navigation a {
+.post-navigation a:visited,
+.paging-navigation a,
+.paging-navigation a:visited {
 	display: block;
 	width: 100%;
 	text-decoration: none;
@@ -3711,13 +3714,19 @@ a:hover, a:active {
 	color: #333;
 }
 
-.comment-navigation a:hover, .comment-navigation a:focus,
+.comment-navigation a:hover, .comment-navigation a:focus, .comment-navigation a:visited:hover, .comment-navigation a:visited:focus,
 .posts-navigation a:hover,
 .posts-navigation a:focus,
+.posts-navigation a:visited:hover,
+.posts-navigation a:visited:focus,
 .post-navigation a:hover,
 .post-navigation a:focus,
+.post-navigation a:visited:hover,
+.post-navigation a:visited:focus,
 .paging-navigation a:hover,
-.paging-navigation a:focus {
+.paging-navigation a:focus,
+.paging-navigation a:visited:hover,
+.paging-navigation a:visited:focus {
 	color: white;
 	border-color: #5992E7;
 	background: #5992E7;
@@ -3980,7 +3989,7 @@ a:hover, a:active {
 	.single.has-sidebar .hentry .widget-area,
 	.page .hentry .widget-area,
 	.multimedia-page .hentry .widget-area {
-		width: 30%;
+		width: 25%;
 	}
 	.page.has-page-sidebar .hentry,
 	.multimedia-page.has-page-sidebar .hentry {
@@ -4070,7 +4079,7 @@ a:hover, a:active {
 		width: 60%;
 	}
 	.archive-view.has-sidebar .widget-area {
-		width: 30%;
+		width: 25%;
 	}
 	.archive-view.no-sidebar .site-content {
 		max-width: 680px;
