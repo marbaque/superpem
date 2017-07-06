@@ -22,10 +22,10 @@ Getting Started
 
 Para editar directamente este tema, tiene que tener un procesador de Sass. Para automatizar esta y otras tareas se trabajó con Gulp.
 
-Carpeta para manejar los paquetes y tareas https://github.com/marbaque/gulp-dev
-1. Clonar el repositorio en dentro de la carpeta de temas de wordpress.
-2. Editar el archivo con el nombre del tema y la dirección del sitio en el servidor.
-3. Abrir una ventada de terminal en esta carpeta y ejecutar el comando 'gulp'.
+Guld-dev: Carpeta para manejar los paquetes y tareas https://github.com/marbaque/gulp-dev
+* 1. Clonar el repositorio gulp-dev en dentro de la carpeta de temas de wordpress.
+* 2. Editar el archivo con el nombre del tema y la dirección del sitio en el servidor.
+* 3. Abrir una ventada de terminal en esta carpeta y ejecutar el comando 'gulp'.
 
 Buena suerte!
 # superpem
