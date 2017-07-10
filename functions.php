@@ -339,11 +339,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Load custom post types: multimedia.
- */
-require get_template_directory() . '/inc/custom-posts.php';
-
-/**
  * Load bredacrumbs.
  */
 require get_template_directory() . '/inc/breadcrumbs.php';
