@@ -37,12 +37,11 @@
 
 .entry-title{
     margin: .125em 0 .25em;
-    line-height: 1.25;
 
-    @include font-size(1.4);
+    //@include font-size(1.4);
 
     @media screen and (min-width: $query__medium){
-        @include font-size(2);
+        //@include font-size(2);
     }
 
     a{
